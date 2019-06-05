@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 
 app.use(express.static('public'))
 
@@ -9,4 +9,14 @@ app.set('views', './public/views/pages')
 
 app.get('/', (req, res) => res.render('index'))
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.get('/profile', (req, res) => res.render('profile'))
+
+app.get('/details/:id', (req, res) =>
+  res.render('detail', { id: req.params.id })
+)
+
+app.get('*', function(req, res) {
+  res.status(404).render('pages/404')
+})
+
+app.listen(port, () => console.log(`Wikiminds listening on port ${port}!`))
