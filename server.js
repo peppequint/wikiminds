@@ -32,8 +32,11 @@ app.get('/register', (req, res) => res.render('register'))
 app.get('/login', (req, res) => res.render('login'))
 
 app.get('/details/:id', (req, res) =>
-  res.render('detail', { id: req.params.id })
+  res.render('detail', {
+    data: issues.issues.find(issue => issue._id === req.params.id)
+  })
 )
+
 //
 // app.get('*', function(req, res) {
 //   res.status(404).render('pages/404')

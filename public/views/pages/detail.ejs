@@ -5,10 +5,14 @@
 	</head>
 	<body>
 		<% include ../partials/header %>
+		<%= console.log(data)%>
 		<main class="l-container">
 			<section class="m-section m-detail">
 				<header class="m-detail--header">
 					<img class="m-detail--image" src="./../../src/img/test-image.jpg" alt="">
+					<h1><%= data.name%>%></h1>
+					<h2><%= data.short_title %></h2>
+					<p><%= data.description%></p>
 				</header>
 			</section>
 		</main>

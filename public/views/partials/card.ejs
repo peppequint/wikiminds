@@ -6,6 +6,6 @@
 	<img class="m-card--image" src="./../../src/img/test-image.jpg" alt="">
 	<span class="m-card--category"><%= issue.genre%></span>
 	<p class=m-card--votes><%= issue.votes %><i class="material-icons md-14">star</i></p>
-	<h3 class="m-card--title"><%= issue.name %></h3>
+	<a href="/details/<%=issue._id%>"><h3 class="m-card--title"><%= issue.name %></h3></a>
 	<p class="m-card--short-title"><%= issue.short_title %></p>
 </article>
