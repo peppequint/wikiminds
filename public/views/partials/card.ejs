@@ -1,11 +1,16 @@
 <article class="m-card">
 <% console.log(issue) %>
-	<button class="m-card--icon" type="button" name="button">
+	<button class="m-card--icon m-card--icon-star" type="button" name="button">
 		<i class="material-icons">star</i>
 	</button>
 	<img class="m-card--image" src="./../../src/img/test-image.jpg" alt="">
 	<span class="m-card--category"><%= issue.genre%></span>
 	<p class=m-card--votes><%= issue.votes %><i class="material-icons md-14">star</i></p>
-	<a href="/details/<%=issue._id%>"><h3 class="m-card--title"><%= issue.name %></h3></a>
+	<h3 class="m-card--title"><%= issue.name %></h3>
 	<p class="m-card--short-title"><%= issue.short_title %></p>
+	<a href="/details/<%=issue._id%>">
+		<button class="m-card--icon m-card--icon-arrow" type="button" name="button">
+			more info<i class="material-icons">chevron_right</i>
+		</button>
+	</a>
 </article>

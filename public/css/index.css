@@ -5,10 +5,8 @@
   --color-blue: #00aeee;
   --color-green: #00d398;
   --color-yellow: #ffd794;
-  --color-white: #f4f5f7;
   --color-black: #334a52;
-
-  --color-background-blue: #f4f5f7;
+  --color-grey-blue: #f4f5f7;
 
   --color-body-heading: #061e25;
   --color-body-font: #334a52;
@@ -18,7 +16,7 @@
 }
 
 body {
-  background-color: var(--color-background-blue);
+  background-color: var(--color-grey-blue);
   font-family: var(--font-primary);
   font-size: 15px;
   letter-spacing: 1px;
@@ -71,6 +69,11 @@ h5,
 p {
   font-family: var(--font-primary);
   margin: 0;
+}
+
+button {
+  font-family: var(--font-secondary);
+  letter-spacing: 1px;
 }
 
 /* base */
@@ -138,9 +141,9 @@ textarea {
 }
 
 /* layout container */
-.l-container {
-  /* margin: 0.75rem 1rem; */
-}
+/* .l-container {
+  margin: 0.75rem 1rem;
+} */
 
 .m-section {
   width: 100%;
@@ -175,27 +178,56 @@ textarea {
   margin: 0.75rem 1rem 2rem;
   overflow: hidden;
   position: relative;
+  transition: .2s ease-in;
+}
+
+.m-card:hover {
+  transform: scale(1.015);
 }
 
 .m-card--icon {
-  background-color: var(--color-yellow);
   cursor: pointer;
   height: 3rem;
   padding: 0;
   position: absolute;
-  right: 0;
-  top: 0;
   width: 3rem;
 }
 
-.m-card--icon > i {
-  color: var(--color-white);
+.m-card--icon-star {
+  background-color: var(--color-yellow);
+  right: 0;
+  top: 0;
+}
+
+.m-card--icon-arrow {
+  align-items: center;
+  background-color: var(--color-grey-blue);
+  bottom: 0;
+  color: var(--color-black);
+  display: flex;
+  flex-direction: row;
+  font-weight: 700;
+  justify-content: flex-end;
+  padding: 0 0.75rem;
+  right: 0;
+  text-transform: uppercase;
+  width: 10rem;
+}
+
+
+.m-card--icon-star > i {
+  color: var(--color-grey-blue);
   /* opacity: 0.25; */
+}
+
+.m-card--icon-arrow > i {
+  color: var(--color-black);
+  margin-left: 1rem;
 }
 
 .m-card--category,
 .m-card--votes {
-  color: var(--color-white);
+  color: var(--color-grey-blue);
   background: var(--color-black);
   padding: 0.25rem 0.75rem;
   position: absolute;
