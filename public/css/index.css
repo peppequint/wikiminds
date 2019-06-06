@@ -33,7 +33,7 @@ h5 {
   color: var(--color-body-heading);
   font-family: var(--font-secondary);
   letter-spacing: 2px;
-  margin-top: 0;
+  margin: 0;
 }
 
 h1,
@@ -159,13 +159,20 @@ textarea {
   flex-direction: column;
 }
 
-.m-heading--red::before {
+.m-section--heading::before {
   bottom: 0;
-  background: var(--color-red);
   content: '';
   height: 3px;
   position: absolute;
   width: 100%;
+}
+
+.m-section--heading-red::before {
+  background: var(--color-red);
+}
+
+.m-section--heading-blue::before {
+  background: var(--color-blue);
 }
 
 /* layout card */
@@ -174,7 +181,7 @@ textarea {
   background-color: #fbfbfb;
   display: flex;
   flex-direction: column;
-  height: 350px;
+  height: 400px;
   margin: 0.75rem 1rem 2rem;
   overflow: hidden;
   position: relative;
@@ -260,7 +267,8 @@ textarea {
 }
 
 .m-card--title {
-  text-transform: capitalize;
+  margin-top: 2rem;
+  text-transform: uppercase;
 }
 
 /* layout detail */
