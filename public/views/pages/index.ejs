@@ -9,13 +9,17 @@
 			<section class="m-section m-trending">
 				<h1 class="m-section--heading m-heading--xxl m-heading--red">Trending</h1>
 				<% data.issues.forEach(function(issue){ %>
-     				<%- include('../partials/card', {issue: issue}); %>
+				<% if(issue.trending){ %>
+					 <%- include('../partials/card', {issue: issue}); %>
+					 <% } %>
   				<% }); %>
 			</section>
 			<section class="m-section m-recommended">
 				<h1 class="m-section--heading m-heading--xxl m-heading--red">Recommended</h1>
 				<% data.issues.forEach(function(issue){ %>
-     				<%- include('../partials/card', {issue: issue}); %>
+				<% if(issue.recommended){ %>
+					 <%- include('../partials/card', {issue: issue}); %>
+					 <% } %>
   				<% }); %>
 			</section>
 		</main>
