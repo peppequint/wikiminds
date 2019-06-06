@@ -8,7 +8,9 @@
 		<main class="l-container">
 			<section class="m-section">
 				<h1 class="m-section--heading m-heading--xxl m-heading--red">Trending</h1>
-				<% include ../partials/card %>
+				<% data.issues.forEach(function(issue){ %>
+     				<%- include('../partials/card', {issue: issue}); %>
+  				<% }); %>
 			</section>
 		</main>
 		<% include ../partials/footer %>

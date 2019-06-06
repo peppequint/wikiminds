@@ -2,12 +2,13 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000
 
+const issues = require('./public/src/data/issues.json')
 app.use(express.static('public'))
 
 app.set('view engine', 'ejs')
 app.set('views', './public/views/pages')
 
-app.get('/', (req, res) => res.render('index'))
+app.get('/', (req, res) => res.render('index', { data: issues }))
 
 app.get('/profile', (req, res) => res.render('profile'))
 

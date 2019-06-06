@@ -1,8 +1,9 @@
 <article class="m-card">
+<% console.log(issue) %>
 	<img class="m-card--image" src="./../../src/img/test-image.jpg" alt="">
-	<span class="m-card--cateogry">Environment</span>
-	<h3 class="m-card--title">A coding gaming system</h3>
-	<p>Learn to code one glitch at a time</p>
+	<span class="m-card--category"><%= issue.genre%></span>
+	<h3 class="m-card--title"><%= issue.name %></h3>
+	<p><%= issue.description %></p>
 	<i class="material-icons">plus_one</i>
-	<p class=m-card--votes>0</p>
+	<p class=m-card--votes><%= issue.votes %></p>
 </article>
