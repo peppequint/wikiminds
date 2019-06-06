@@ -175,3 +175,16 @@ textarea {
   object-fit: cover;
   width: 100%;
 }
+
+/* layout detail */
+.m-detail--header {
+  height: 400px;
+  width: 100%;
+}
+
+.m-detail--image {
+  height: 100%;
+  object-fit: cover;
+  object-position: 30%;
+  width: 100%;
+}
