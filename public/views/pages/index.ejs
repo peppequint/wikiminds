@@ -7,7 +7,7 @@
 		<% include ../partials/header %>
 		<main class="l-container">
 			<section class="m-section m-trending">
-				<h1 class="m-section--heading m-heading--xxl m-heading--red">Trending</h1>
+				<h1 class="m-section--heading m-section--heading-red m-heading--xxl">Trending</h1>
 				<% data.issues.forEach(function(issue){ %>
 				<% if(issue.trending){ %>
 					 <%- include('../partials/card', {issue: issue}); %>
@@ -15,7 +15,7 @@
   				<% }); %>
 			</section>
 			<section class="m-section m-recommended">
-				<h1 class="m-section--heading m-heading--xxl m-heading--red">Recommended</h1>
+				<h1 class="m-section--heading m-section--heading-blue m-heading--xxl">Recommended</h1>
 				<% data.issues.forEach(function(issue){ %>
 				<% if(issue.recommended){ %>
 					 <%- include('../partials/card', {issue: issue}); %>
