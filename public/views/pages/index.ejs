@@ -13,7 +13,10 @@
   				<% }); %>
 			</section>
 			<section class="m-section m-recommended">
-
+				<h1 class="m-section--heading m-heading--xxl m-heading--red">Recommended</h1>
+				<% data.issues.forEach(function(issue){ %>
+     				<%- include('../partials/card', {issue: issue}); %>
+  				<% }); %>
 			</section>
 		</main>
 		<% include ../partials/footer %>
