@@ -6,7 +6,7 @@
 	<body>
 		<% include ../partials/header %>
 		<main class="l-container">
-			<section class="m-section">
+			<section class="m-section m-trending">
 				<h1 class="m-section--heading m-heading--xxl m-heading--red">Trending</h1>
 				<% data.issues.forEach(function(issue){ %>
      				<%- include('../partials/card', {issue: issue}); %>
