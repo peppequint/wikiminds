@@ -17,6 +17,7 @@
 
 body {
   background-color: var(--color-background-blue);
+  font-family: var(--font-primary);
   font-size: 15px;
   letter-spacing: 1px;
   line-height: 1.75;
@@ -37,31 +38,31 @@ h5 {
 
 h1,
 .m-heading--xxl {
-  font-size: 1.75em;
+  font-size: 1.75rem;
   font-weight: 400;
 }
 
 h2,
 .m-heading--xl {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-weight: 500;
 }
 
 h3,
 .m-heading--lg {
-  font-size: 1.25em;
+  font-size: 1.25rem;
   font-weight: 700;
 }
 
 h4,
 .m-heading--md {
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: 800;
 }
 
 h5,
 .m-heading--sm {
-  font-size: 0.75em;
+  font-size: 0.75rem;
   font-weight: 800;
 }
 
@@ -113,30 +114,40 @@ textarea {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  margin: 0.75em 1em;
+  margin: 0.75rem 1rem;
 }
 
 /* module header logo */
 .m-header--logo {
   color: var(--color-body-font);
   font-family: var(--font-secondary);
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: 800;
   margin-right: auto;
   text-transform: uppercase;
 }
 
 .m-header--icon:first-of-type {
-  margin-right: 0.5em;
+  margin-right: 0.5rem;
 }
 
 /* layout container */
 .l-container {
-  margin: 0.75em 1em;
+  /* margin: 0.75rem 1rem; */
+}
+
+.m-section {
+  width: 100%;
 }
 
 .m-section--heading {
+  margin: 0.75rem 1rem;
   position: relative;
+}
+
+.m-trending {
+  display: flex;
+  flex-direction: column;
 }
 
 .m-heading--red::before {
@@ -156,14 +167,13 @@ textarea {
   display: flex;
   flex-direction: column;
   height: 350px;
-  margin-bottom: 2em;
+  margin: 0.75rem 1rem 2rem;
   overflow: hidden;
   position: relative;
-  width: 100%;
 }
 
 .m-card :not(img) {
-  padding: 0 0.75em;
+  padding: 0 0.75rem;
 }
 
 .m-card--title {
