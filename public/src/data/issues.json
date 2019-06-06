@@ -1,322 +1,324 @@
-[
-  {
-    "index": 0,
-    "_id": "5cf8eb6a1b152d65758aa390",
-    "name": "Issue 0",
-    "short_title": "exercitation irure adipisicing laboris",
-    "description": "Tempor aliquip commodo sint nulla. Cillum quis pariatur sunt culpa tempor quis ad consequat amet. Commodo deserunt cillum ad irure excepteur est do elit commodo cupidatat ex. Tempor labore velit mollit do consequat esse deserunt magna commodo officia commodo ex ut. Est ea sit nulla veniam eiusmod aliqua in aliqua aute consequat amet officia. Anim ipsum ad proident mollit eu veniam voluptate pariatur esse non id cupidatat.\r\n",
-    "genre": "dolore",
-    "picture": "http://placehold.it/32x32",
-    "votes": 133,
-    "trending": true,
-    "recommended": false,
-    "users": [
-      {
-        "id": 0,
-        "name": "Scott Hodges"
-      },
-      {
-        "id": 1,
-        "name": "Wolf Foster"
-      },
-      {
-        "id": 2,
-        "name": "Blankenship Dixon"
-      },
-      {
-        "id": 3,
-        "name": "Francis Hinton"
-      }
-    ]
-  },
-  {
-    "index": 1,
-    "_id": "5cf8eb6a2e88a1aa9b478dea",
-    "name": "Issue 1",
-    "short_title": "irure adipisicing et anim",
-    "description": "Exercitation enim aute laborum do eiusmod labore laborum. Dolore excepteur aliqua Lorem officia deserunt magna ex velit elit. Adipisicing incididunt ea officia ut. Cupidatat magna et consequat sunt do aute labore reprehenderit consectetur et ea.\r\n",
-    "genre": "magna",
-    "picture": "http://placehold.it/32x32",
-    "votes": 175,
-    "trending": true,
-    "recommended": false,
-    "users": [
-      {
-        "id": 0,
-        "name": "Olson Zamora"
-      },
-      {
-        "id": 1,
-        "name": "Wendi Pitts"
-      },
-      {
-        "id": 2,
-        "name": "Ingrid Cole"
-      },
-      {
-        "id": 3,
-        "name": "Rice Boyer"
-      }
-    ]
-  },
-  {
-    "index": 2,
-    "_id": "5cf8eb6a7d0cd9ef5dc757ce",
-    "name": "Issue 2",
-    "short_title": "sint ut adipisicing consectetur",
-    "description": "Mollit incididunt non Lorem ea ut occaecat. Elit aliquip aliqua ex veniam duis in veniam veniam in eiusmod. Lorem eiusmod enim ad consectetur aliquip fugiat qui sint.\r\n",
-    "genre": "minim",
-    "picture": "http://placehold.it/32x32",
-    "votes": 66,
-    "trending": true,
-    "recommended": false,
-    "users": [
-      {
-        "id": 0,
-        "name": "Lidia Randolph"
-      },
-      {
-        "id": 1,
-        "name": "Regina Cervantes"
-      },
-      {
-        "id": 2,
-        "name": "Raymond Baxter"
-      },
-      {
-        "id": 3,
-        "name": "Sutton Roberts"
-      },
-      {
-        "id": 4,
-        "name": "Shelly Deleon"
-      }
-    ]
-  },
-  {
-    "index": 3,
-    "_id": "5cf8eb6abda24fc0f7688bee",
-    "name": "Issue 3",
-    "short_title": "nulla ullamco dolor occaecat",
-    "description": "Laboris sint magna laborum cillum non veniam nostrud aliquip reprehenderit adipisicing cillum. Esse esse Lorem nostrud dolor in aute. Commodo et velit consequat cillum ea incididunt sint ullamco ex.\r\n",
-    "genre": "ex",
-    "picture": "http://placehold.it/32x32",
-    "votes": 199,
-    "trending": false,
-    "recommended": true,
-    "users": [
-      {
-        "id": 0,
-        "name": "Strickland Wilcox"
-      },
-      {
-        "id": 1,
-        "name": "Mccormick Woodard"
-      },
-      {
-        "id": 2,
-        "name": "Farrell Green"
-      }
-    ]
-  },
-  {
-    "index": 4,
-    "_id": "5cf8eb6a1518ccf44a64e603",
-    "name": "Issue 4",
-    "short_title": "nostrud quis qui nisi",
-    "description": "Irure adipisicing ad deserunt ullamco sint sint nostrud non. Id dolor velit in nostrud laboris cillum laboris adipisicing minim enim. Laborum sint ullamco qui deserunt ipsum incididunt nulla. Ex aute irure deserunt sunt. Officia dolore Lorem occaecat commodo nisi non tempor ipsum. Laborum pariatur laboris voluptate consectetur.\r\n",
-    "genre": "laboris",
-    "picture": "http://placehold.it/32x32",
-    "votes": 195,
-    "trending": false,
-    "recommended": true,
-    "users": [
-      {
-        "id": 0,
-        "name": "Guerrero Sherman"
-      },
-      {
-        "id": 1,
-        "name": "Celia Garrison"
-      },
-      {
-        "id": 2,
-        "name": "Blanche Stevenson"
-      },
-      {
-        "id": 3,
-        "name": "Clare Roy"
-      },
-      {
-        "id": 4,
-        "name": "Wilcox Barron"
-      },
-      {
-        "id": 5,
-        "name": "Henderson Rocha"
-      }
-    ]
-  },
-  {
-    "index": 5,
-    "_id": "5cf8eb6a2388b0233f0dc311",
-    "name": "Issue 5",
-    "short_title": "in et reprehenderit et",
-    "description": "Aute excepteur cupidatat mollit excepteur ad veniam Lorem veniam ea. Eu cupidatat eu laborum ullamco pariatur velit irure ipsum do ipsum eiusmod id. Proident ad minim ut in est duis aute nisi mollit fugiat officia. Duis magna ad ullamco ullamco eiusmod pariatur ad dolore labore minim. Aliqua dolore consequat sit adipisicing. Eiusmod sit aliquip anim esse. Cupidatat laboris sint esse minim pariatur fugiat cupidatat officia magna nostrud irure aliquip aute nulla.\r\n",
-    "genre": "ut",
-    "picture": "http://placehold.it/32x32",
-    "votes": 101,
-    "trending": false,
-    "recommended": true,
-    "users": [
-      {
-        "id": 0,
-        "name": "Foster Lott"
-      },
-      {
-        "id": 1,
-        "name": "Morgan Gallagher"
-      },
-      {
-        "id": 2,
-        "name": "Patel Fischer"
-      },
-      {
-        "id": 3,
-        "name": "Lindsey Decker"
-      }
-    ]
-  },
-  {
-    "index": 6,
-    "_id": "5cf8eb6ae256e04722322ea5",
-    "name": "Issue 6",
-    "short_title": "dolore ad nostrud tempor",
-    "description": "Do laboris mollit officia id proident enim et ullamco pariatur id ea. Sint incididunt amet duis elit mollit eiusmod aute. Anim laboris ex nulla do ut do anim esse. Non consequat proident ex reprehenderit occaecat nostrud in ullamco minim ipsum incididunt nisi excepteur elit. Dolor exercitation consequat consectetur dolor Lorem labore officia ut fugiat in sunt nisi fugiat exercitation.\r\n",
-    "genre": "sunt",
-    "picture": "http://placehold.it/32x32",
-    "votes": 242,
-    "trending": false,
-    "recommended": false,
-    "users": [
-      {
-        "id": 0,
-        "name": "Erika Vega"
-      },
-      {
-        "id": 1,
-        "name": "Iva Briggs"
-      },
-      {
-        "id": 2,
-        "name": "Ford Delgado"
-      },
-      {
-        "id": 3,
-        "name": "Melendez Clayton"
-      },
-      {
-        "id": 4,
-        "name": "Carmen Sweet"
-      }
-    ]
-  },
-  {
-    "index": 7,
-    "_id": "5cf8eb6adf5bab6295b33c1e",
-    "name": "Issue 7",
-    "short_title": "amet esse mollit velit",
-    "description": "Culpa laboris dolor proident minim mollit quis cillum sint mollit enim duis. Culpa occaecat ex incididunt nisi aute occaecat nisi irure labore ad occaecat. Laboris magna sit quis exercitation commodo incididunt amet. Irure fugiat ipsum adipisicing dolor nulla quis ex duis fugiat.\r\n",
-    "genre": "consectetur",
-    "picture": "http://placehold.it/32x32",
-    "votes": 173,
-    "trending": false,
-    "recommended": false,
-    "users": [
-      {
-        "id": 0,
-        "name": "Joyce Ewing"
-      },
-      {
-        "id": 1,
-        "name": "Roach Church"
-      },
-      {
-        "id": 2,
-        "name": "Shaffer Cannon"
-      },
-      {
-        "id": 3,
-        "name": "Bonita Hobbs"
-      },
-      {
-        "id": 4,
-        "name": "Jane Ellison"
-      }
-    ]
-  },
-  {
-    "index": 8,
-    "_id": "5cf8eb6afdd74cef625fb01b",
-    "name": "Issue 8",
-    "short_title": "sit ut fugiat proident",
-    "description": "Aute voluptate incididunt fugiat eu sunt aliquip. Consectetur sunt anim nulla ad mollit dolor ad sit fugiat deserunt cillum ut velit. Consequat cillum aliquip fugiat sunt ex officia labore ea occaecat in eu. Proident enim Lorem quis incididunt nostrud consequat laboris consequat veniam nulla est. Culpa anim commodo culpa aute dolore laboris ut consectetur laborum nisi voluptate irure. Cillum nisi Lorem ipsum ex enim anim labore nisi Lorem sunt ex occaecat.\r\n",
-    "genre": "reprehenderit",
-    "picture": "http://placehold.it/32x32",
-    "votes": 265,
-    "trending": false,
-    "recommended": false,
-    "users": [
-      {
-        "id": 0,
-        "name": "Chapman Robles"
-      },
-      {
-        "id": 1,
-        "name": "Dyer Pacheco"
-      },
-      {
-        "id": 2,
-        "name": "Marcy Bond"
-      }
-    ]
-  },
-  {
-    "index": 9,
-    "_id": "5cf8eb6af8d094ba9d2d8b20",
-    "name": "Issue 9",
-    "short_title": "quis non quis sint",
-    "description": "Occaecat eu adipisicing in est ullamco voluptate id nisi. Ipsum ex proident nulla aliquip ex. Consequat aliquip non qui nisi incididunt dolore dolor officia nulla consequat cillum voluptate. Do et qui occaecat velit ad labore eu commodo excepteur. Non nulla eiusmod anim pariatur deserunt exercitation reprehenderit dolore. Sit velit voluptate ullamco enim. Officia veniam minim veniam duis velit quis.\r\n",
-    "genre": "ipsum",
-    "picture": "http://placehold.it/32x32",
-    "votes": 233,
-    "trending": false,
-    "recommended": false,
-    "users": [
-      {
-        "id": 0,
-        "name": "Charity Cruz"
-      },
-      {
-        "id": 1,
-        "name": "Ola Spears"
-      },
-      {
-        "id": 2,
-        "name": "Pearson Walter"
-      },
-      {
-        "id": 3,
-        "name": "Rich Neal"
-      },
-      {
-        "id": 4,
-        "name": "Kathryn Dorsey"
-      },
-      {
-        "id": 5,
-        "name": "Juliette Larson"
-      }
-    ]
-  }
-]
+{
+  "issues": [
+    {
+      "index": 0,
+      "_id": "5cf8eb6a1b152d65758aa390",
+      "name": "Issue 0",
+      "short_title": "exercitation irure adipisicing laboris",
+      "description": "Tempor aliquip commodo sint nulla. Cillum quis pariatur sunt culpa tempor quis ad consequat amet. Commodo deserunt cillum ad irure excepteur est do elit commodo cupidatat ex. Tempor labore velit mollit do consequat esse deserunt magna commodo officia commodo ex ut. Est ea sit nulla veniam eiusmod aliqua in aliqua aute consequat amet officia. Anim ipsum ad proident mollit eu veniam voluptate pariatur esse non id cupidatat.\r\n",
+      "genre": "dolore",
+      "picture": "http://placehold.it/32x32",
+      "votes": 133,
+      "trending": true,
+      "recommended": false,
+      "users": [
+        {
+          "id": 0,
+          "name": "Scott Hodges"
+        },
+        {
+          "id": 1,
+          "name": "Wolf Foster"
+        },
+        {
+          "id": 2,
+          "name": "Blankenship Dixon"
+        },
+        {
+          "id": 3,
+          "name": "Francis Hinton"
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "_id": "5cf8eb6a2e88a1aa9b478dea",
+      "name": "Issue 1",
+      "short_title": "irure adipisicing et anim",
+      "description": "Exercitation enim aute laborum do eiusmod labore laborum. Dolore excepteur aliqua Lorem officia deserunt magna ex velit elit. Adipisicing incididunt ea officia ut. Cupidatat magna et consequat sunt do aute labore reprehenderit consectetur et ea.\r\n",
+      "genre": "magna",
+      "picture": "http://placehold.it/32x32",
+      "votes": 175,
+      "trending": true,
+      "recommended": false,
+      "users": [
+        {
+          "id": 0,
+          "name": "Olson Zamora"
+        },
+        {
+          "id": 1,
+          "name": "Wendi Pitts"
+        },
+        {
+          "id": 2,
+          "name": "Ingrid Cole"
+        },
+        {
+          "id": 3,
+          "name": "Rice Boyer"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "_id": "5cf8eb6a7d0cd9ef5dc757ce",
+      "name": "Issue 2",
+      "short_title": "sint ut adipisicing consectetur",
+      "description": "Mollit incididunt non Lorem ea ut occaecat. Elit aliquip aliqua ex veniam duis in veniam veniam in eiusmod. Lorem eiusmod enim ad consectetur aliquip fugiat qui sint.\r\n",
+      "genre": "minim",
+      "picture": "http://placehold.it/32x32",
+      "votes": 66,
+      "trending": true,
+      "recommended": false,
+      "users": [
+        {
+          "id": 0,
+          "name": "Lidia Randolph"
+        },
+        {
+          "id": 1,
+          "name": "Regina Cervantes"
+        },
+        {
+          "id": 2,
+          "name": "Raymond Baxter"
+        },
+        {
+          "id": 3,
+          "name": "Sutton Roberts"
+        },
+        {
+          "id": 4,
+          "name": "Shelly Deleon"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "_id": "5cf8eb6abda24fc0f7688bee",
+      "name": "Issue 3",
+      "short_title": "nulla ullamco dolor occaecat",
+      "description": "Laboris sint magna laborum cillum non veniam nostrud aliquip reprehenderit adipisicing cillum. Esse esse Lorem nostrud dolor in aute. Commodo et velit consequat cillum ea incididunt sint ullamco ex.\r\n",
+      "genre": "ex",
+      "picture": "http://placehold.it/32x32",
+      "votes": 199,
+      "trending": false,
+      "recommended": true,
+      "users": [
+        {
+          "id": 0,
+          "name": "Strickland Wilcox"
+        },
+        {
+          "id": 1,
+          "name": "Mccormick Woodard"
+        },
+        {
+          "id": 2,
+          "name": "Farrell Green"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "_id": "5cf8eb6a1518ccf44a64e603",
+      "name": "Issue 4",
+      "short_title": "nostrud quis qui nisi",
+      "description": "Irure adipisicing ad deserunt ullamco sint sint nostrud non. Id dolor velit in nostrud laboris cillum laboris adipisicing minim enim. Laborum sint ullamco qui deserunt ipsum incididunt nulla. Ex aute irure deserunt sunt. Officia dolore Lorem occaecat commodo nisi non tempor ipsum. Laborum pariatur laboris voluptate consectetur.\r\n",
+      "genre": "laboris",
+      "picture": "http://placehold.it/32x32",
+      "votes": 195,
+      "trending": false,
+      "recommended": true,
+      "users": [
+        {
+          "id": 0,
+          "name": "Guerrero Sherman"
+        },
+        {
+          "id": 1,
+          "name": "Celia Garrison"
+        },
+        {
+          "id": 2,
+          "name": "Blanche Stevenson"
+        },
+        {
+          "id": 3,
+          "name": "Clare Roy"
+        },
+        {
+          "id": 4,
+          "name": "Wilcox Barron"
+        },
+        {
+          "id": 5,
+          "name": "Henderson Rocha"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "_id": "5cf8eb6a2388b0233f0dc311",
+      "name": "Issue 5",
+      "short_title": "in et reprehenderit et",
+      "description": "Aute excepteur cupidatat mollit excepteur ad veniam Lorem veniam ea. Eu cupidatat eu laborum ullamco pariatur velit irure ipsum do ipsum eiusmod id. Proident ad minim ut in est duis aute nisi mollit fugiat officia. Duis magna ad ullamco ullamco eiusmod pariatur ad dolore labore minim. Aliqua dolore consequat sit adipisicing. Eiusmod sit aliquip anim esse. Cupidatat laboris sint esse minim pariatur fugiat cupidatat officia magna nostrud irure aliquip aute nulla.\r\n",
+      "genre": "ut",
+      "picture": "http://placehold.it/32x32",
+      "votes": 101,
+      "trending": false,
+      "recommended": true,
+      "users": [
+        {
+          "id": 0,
+          "name": "Foster Lott"
+        },
+        {
+          "id": 1,
+          "name": "Morgan Gallagher"
+        },
+        {
+          "id": 2,
+          "name": "Patel Fischer"
+        },
+        {
+          "id": 3,
+          "name": "Lindsey Decker"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "_id": "5cf8eb6ae256e04722322ea5",
+      "name": "Issue 6",
+      "short_title": "dolore ad nostrud tempor",
+      "description": "Do laboris mollit officia id proident enim et ullamco pariatur id ea. Sint incididunt amet duis elit mollit eiusmod aute. Anim laboris ex nulla do ut do anim esse. Non consequat proident ex reprehenderit occaecat nostrud in ullamco minim ipsum incididunt nisi excepteur elit. Dolor exercitation consequat consectetur dolor Lorem labore officia ut fugiat in sunt nisi fugiat exercitation.\r\n",
+      "genre": "sunt",
+      "picture": "http://placehold.it/32x32",
+      "votes": 242,
+      "trending": false,
+      "recommended": false,
+      "users": [
+        {
+          "id": 0,
+          "name": "Erika Vega"
+        },
+        {
+          "id": 1,
+          "name": "Iva Briggs"
+        },
+        {
+          "id": 2,
+          "name": "Ford Delgado"
+        },
+        {
+          "id": 3,
+          "name": "Melendez Clayton"
+        },
+        {
+          "id": 4,
+          "name": "Carmen Sweet"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "_id": "5cf8eb6adf5bab6295b33c1e",
+      "name": "Issue 7",
+      "short_title": "amet esse mollit velit",
+      "description": "Culpa laboris dolor proident minim mollit quis cillum sint mollit enim duis. Culpa occaecat ex incididunt nisi aute occaecat nisi irure labore ad occaecat. Laboris magna sit quis exercitation commodo incididunt amet. Irure fugiat ipsum adipisicing dolor nulla quis ex duis fugiat.\r\n",
+      "genre": "consectetur",
+      "picture": "http://placehold.it/32x32",
+      "votes": 173,
+      "trending": false,
+      "recommended": false,
+      "users": [
+        {
+          "id": 0,
+          "name": "Joyce Ewing"
+        },
+        {
+          "id": 1,
+          "name": "Roach Church"
+        },
+        {
+          "id": 2,
+          "name": "Shaffer Cannon"
+        },
+        {
+          "id": 3,
+          "name": "Bonita Hobbs"
+        },
+        {
+          "id": 4,
+          "name": "Jane Ellison"
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "_id": "5cf8eb6afdd74cef625fb01b",
+      "name": "Issue 8",
+      "short_title": "sit ut fugiat proident",
+      "description": "Aute voluptate incididunt fugiat eu sunt aliquip. Consectetur sunt anim nulla ad mollit dolor ad sit fugiat deserunt cillum ut velit. Consequat cillum aliquip fugiat sunt ex officia labore ea occaecat in eu. Proident enim Lorem quis incididunt nostrud consequat laboris consequat veniam nulla est. Culpa anim commodo culpa aute dolore laboris ut consectetur laborum nisi voluptate irure. Cillum nisi Lorem ipsum ex enim anim labore nisi Lorem sunt ex occaecat.\r\n",
+      "genre": "reprehenderit",
+      "picture": "http://placehold.it/32x32",
+      "votes": 265,
+      "trending": false,
+      "recommended": false,
+      "users": [
+        {
+          "id": 0,
+          "name": "Chapman Robles"
+        },
+        {
+          "id": 1,
+          "name": "Dyer Pacheco"
+        },
+        {
+          "id": 2,
+          "name": "Marcy Bond"
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "_id": "5cf8eb6af8d094ba9d2d8b20",
+      "name": "Issue 9",
+      "short_title": "quis non quis sint",
+      "description": "Occaecat eu adipisicing in est ullamco voluptate id nisi. Ipsum ex proident nulla aliquip ex. Consequat aliquip non qui nisi incididunt dolore dolor officia nulla consequat cillum voluptate. Do et qui occaecat velit ad labore eu commodo excepteur. Non nulla eiusmod anim pariatur deserunt exercitation reprehenderit dolore. Sit velit voluptate ullamco enim. Officia veniam minim veniam duis velit quis.\r\n",
+      "genre": "ipsum",
+      "picture": "http://placehold.it/32x32",
+      "votes": 233,
+      "trending": false,
+      "recommended": false,
+      "users": [
+        {
+          "id": 0,
+          "name": "Charity Cruz"
+        },
+        {
+          "id": 1,
+          "name": "Ola Spears"
+        },
+        {
+          "id": 2,
+          "name": "Pearson Walter"
+        },
+        {
+          "id": 3,
+          "name": "Rich Neal"
+        },
+        {
+          "id": 4,
+          "name": "Kathryn Dorsey"
+        },
+        {
+          "id": 5,
+          "name": "Juliette Larson"
+        }
+      ]
+    }
+  ]
+}
