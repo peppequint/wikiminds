@@ -1,0 +1,296 @@
+[
+  {
+    "index": 0,
+    "_id": "5cf8df327ad5a07e636a278c",
+    "name": "Issue 0",
+    "description": "Proident exercitation Lorem irure exercitation mollit Lorem amet anim quis elit incididunt Lorem.",
+    "genre": "Lorem",
+    "picture": "http://placehold.it/32x32",
+    "votes": 88,
+    "users": [
+      {
+        "id": 0,
+        "name": "Vivian Stafford"
+      },
+      {
+        "id": 1,
+        "name": "Heidi William"
+      },
+      {
+        "id": 2,
+        "name": "Evelyn Luna"
+      },
+      {
+        "id": 3,
+        "name": "Lauren Lyons"
+      }
+    ]
+  },
+  {
+    "index": 1,
+    "_id": "5cf8df321f7f9a848376a150",
+    "name": "Issue 1",
+    "description": "Nulla enim qui commodo aliqua.",
+    "genre": "dolor",
+    "picture": "http://placehold.it/32x32",
+    "votes": 283,
+    "users": [
+      {
+        "id": 0,
+        "name": "Buck Fernandez"
+      },
+      {
+        "id": 1,
+        "name": "Cooper Alston"
+      },
+      {
+        "id": 2,
+        "name": "Marta Walsh"
+      },
+      {
+        "id": 3,
+        "name": "Olson Black"
+      },
+      {
+        "id": 4,
+        "name": "Pugh Duffy"
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "_id": "5cf8df327c4462ad83261f37",
+    "name": "Issue 2",
+    "description": "Id consequat nulla occaecat aliqua qui officia officia et exercitation ea officia.",
+    "genre": "ullamco",
+    "picture": "http://placehold.it/32x32",
+    "votes": 239,
+    "users": [
+      {
+        "id": 0,
+        "name": "Burris Decker"
+      },
+      {
+        "id": 1,
+        "name": "Quinn Fulton"
+      },
+      {
+        "id": 2,
+        "name": "Chen Meyers"
+      },
+      {
+        "id": 3,
+        "name": "Sawyer Rosa"
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "_id": "5cf8df32cac4dfffb1629ed2",
+    "name": "Issue 3",
+    "description": "Mollit cupidatat tempor sit aute est commodo.",
+    "genre": "anim",
+    "picture": "http://placehold.it/32x32",
+    "votes": 251,
+    "users": [
+      {
+        "id": 0,
+        "name": "Petersen Craig"
+      },
+      {
+        "id": 1,
+        "name": "Carson Vargas"
+      },
+      {
+        "id": 2,
+        "name": "Morgan Shannon"
+      },
+      {
+        "id": 3,
+        "name": "Dillon Baker"
+      },
+      {
+        "id": 4,
+        "name": "Lawson Patton"
+      },
+      {
+        "id": 5,
+        "name": "Annabelle Gallegos"
+      }
+    ]
+  },
+  {
+    "index": 4,
+    "_id": "5cf8df321fa7b0eadfe6bd3f",
+    "name": "Issue 4",
+    "description": "Laborum mollit ad duis consectetur est.",
+    "genre": "mollit",
+    "picture": "http://placehold.it/32x32",
+    "votes": 203,
+    "users": [
+      {
+        "id": 0,
+        "name": "Marie Barrett"
+      },
+      {
+        "id": 1,
+        "name": "Clarke George"
+      },
+      {
+        "id": 2,
+        "name": "Irwin Hayden"
+      }
+    ]
+  },
+  {
+    "index": 5,
+    "_id": "5cf8df32f2d45c74b156dcdc",
+    "name": "Issue 5",
+    "description": "In eiusmod magna cupidatat culpa irure ullamco enim irure laborum culpa nostrud.",
+    "genre": "sunt",
+    "picture": "http://placehold.it/32x32",
+    "votes": 101,
+    "users": [
+      {
+        "id": 0,
+        "name": "Beatriz Osborne"
+      },
+      {
+        "id": 1,
+        "name": "Sharpe Randolph"
+      },
+      {
+        "id": 2,
+        "name": "Jordan Cain"
+      },
+      {
+        "id": 3,
+        "name": "Pam Frederick"
+      },
+      {
+        "id": 4,
+        "name": "Vaughn Ramos"
+      },
+      {
+        "id": 5,
+        "name": "Gabriela Olson"
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "_id": "5cf8df3275049eb5c4576167",
+    "name": "Issue 6",
+    "description": "Eiusmod nulla Lorem et reprehenderit amet enim voluptate non pariatur ipsum cupidatat ad id do.",
+    "genre": "elit",
+    "picture": "http://placehold.it/32x32",
+    "votes": 278,
+    "users": [
+      {
+        "id": 0,
+        "name": "Olsen Anderson"
+      },
+      {
+        "id": 1,
+        "name": "Deanna Mills"
+      },
+      {
+        "id": 2,
+        "name": "Kirby Pugh"
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "_id": "5cf8df32c953b75d3a56e02c",
+    "name": "Issue 7",
+    "description": "Consequat laborum mollit consequat voluptate tempor voluptate Lorem aliquip aliquip amet excepteur ut minim officia.",
+    "genre": "incididunt",
+    "picture": "http://placehold.it/32x32",
+    "votes": 237,
+    "users": [
+      {
+        "id": 0,
+        "name": "Woodard Tyson"
+      },
+      {
+        "id": 1,
+        "name": "Sheree Nixon"
+      },
+      {
+        "id": 2,
+        "name": "Baldwin Cortez"
+      },
+      {
+        "id": 3,
+        "name": "Lynda Smith"
+      },
+      {
+        "id": 4,
+        "name": "Estelle Flynn"
+      }
+    ]
+  },
+  {
+    "index": 8,
+    "_id": "5cf8df321965f9a986a8db09",
+    "name": "Issue 8",
+    "description": "Amet amet Lorem enim reprehenderit non Lorem aliquip aliquip consequat sunt culpa ex cupidatat.",
+    "genre": "dolor",
+    "picture": "http://placehold.it/32x32",
+    "votes": 133,
+    "users": [
+      {
+        "id": 0,
+        "name": "Barker Langley"
+      },
+      {
+        "id": 1,
+        "name": "Charlene Barnes"
+      },
+      {
+        "id": 2,
+        "name": "Josephine Buck"
+      },
+      {
+        "id": 3,
+        "name": "Carey Fischer"
+      }
+    ]
+  },
+  {
+    "index": 9,
+    "_id": "5cf8df3225ece519ec891eb8",
+    "name": "Issue 9",
+    "description": "Minim sint nisi in tempor sunt esse magna labore pariatur.",
+    "genre": "amet",
+    "picture": "http://placehold.it/32x32",
+    "votes": 197,
+    "users": [
+      {
+        "id": 0,
+        "name": "Rosella French"
+      },
+      {
+        "id": 1,
+        "name": "Knowles Wolf"
+      },
+      {
+        "id": 2,
+        "name": "Ruiz Burnett"
+      },
+      {
+        "id": 3,
+        "name": "Clayton Foley"
+      },
+      {
+        "id": 4,
+        "name": "Key Rodgers"
+      },
+      {
+        "id": 5,
+        "name": "Macias Duncan"
+      }
+    ]
+  }
+]
