@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css?family=Exo:400,500,700,800|Noto+Sans:400,700&display=swap');
+
+:root {
+  --color-red: #ff5e67;
+  --color-blue: #00aeee;
+  --color-green: #00d398;
+  --color-yellow: #ffd794;
+
+  --color-background-blue: #f4f5f7;
+
+  --color-body-heading: #061e25;
+  --color-body-font: #334a52;
+
+  --font-primary: 'Noto Sans', sans-serif;
+  --font-secondary: 'Exo', sans-serif;
+}
+
+body {
+  background-color: var(--color-background-blue);
+  font-size: 15px;
+  letter-spacing: 1px;
+  line-height: 1.75;
+}
+
+/* typography */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--color-body-heading);
+  font-family: var(--font-secondary);
+  letter-spacing: 2px;
+  margin-top: 0;
+}
+
+h1,
+.m-heading--xxl {
+  font-size: 1.75em;
+  font-weight: 400;
+}
+
+h2,
+.m-heading--xl {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+h3,
+.m-heading--lg {
+  font-size: 1.25em;
+  font-weight: 700;
+}
+
+h4,
+.m-heading--md {
+  font-size: 1em;
+  font-weight: 800;
+}
+
+h5,
+.m-heading--sm {
+  font-size: 0.75em;
+  font-weight: 800;
+}
+
+p {
+  color: var(--color-body-font);
+  font-family: var(--font-primary);
+  margin: 0;
+}
+
+/* base */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+button,
+input,
+textarea {
+  background: none;
+  border: 0;
+  outline: none;
+}
+
+/* base icons */
+.material-icons.md-32 {
+  font-size: 32px;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
+}
+
+.material-icons.md-dark {
+  color: var(--color-body-font);
+}
+
+/* layout header */
+.l-header {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 0.75em 1em;
+}
+
+/* module header logo */
+.m-header--logo {
+  color: var(--color-body-font);
+  font-family: var(--font-secondary);
+  font-size: 1em;
+  font-weight: 800;
+  margin-right: auto;
+  text-transform: uppercase;
+}
+
+.m-header--icon:first-of-type {
+  margin-right: 0.5em;
+}
+
+/* layout container */
+.l-container {
+  margin: 0.75em 1em;
+}
+
+.m-section--heading {
+  position: relative;
+}
+
+.m-heading--red::before {
+  bottom: 0;
+  background: var(--color-red);
+  content: '';
+  height: 3px;
+  position: absolute;
+  width: 100%;
+}
+
+/* layout card */
+
+.m-card {
+  background-color: #fbfbfb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  margin-bottom: 2em;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.m-card :not(img) {
+  padding: 0 0.75em;
+}
+
+.m-card--title {
+  text-transform: capitalize;
+}
+
+.m-card--image {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
