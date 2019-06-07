@@ -87,6 +87,10 @@ body {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -127,6 +131,10 @@ textarea {
 }
 
 /* module header logo */
+.m-header--link {
+  margin-right: auto;
+}
+
 .m-header--logo {
   color: var(--color-body-font);
   font-family: var(--font-secondary);
@@ -274,6 +282,25 @@ textarea {
 /* layout detail */
 .m-detail--header {
   height: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.m-detail--header :not(img) {
+  color: var(--color-grey-blue);
+  z-index: 10;
+}
+
+.m-detail--header:after {
+  background:rgba(0, 0, 0, 0.45);
+  content: '\A';
+  height: 100%;
+  left: 0;
+  position: absolute; 
+  top: 0;
   width: 100%;
 }
 
@@ -281,5 +308,12 @@ textarea {
   height: 100%;
   object-fit: cover;
   object-position: 30%;
+  left: 0;
+  position: absolute;
+  top: 0;
   width: 100%;
+}
+
+.m-detail--information {
+  margin: 0.75rem 1rem 2rem;
 }
