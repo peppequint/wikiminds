@@ -12,8 +12,12 @@
 					<img class="m-detail--image" src="./../../src/img/test-image.jpg" alt="">
 					<h1><%= data.name%>%></h1>
 					<h2><%= data.short_title %></h2>
-					<p><%= data.description%></p>
+					<span><%= data.votes %></span>
+					<span><%= data.genre%></span>
 				</header>
+				<article class="m-detail--information">
+					<p class="m-information--paragraph"><%= data.description%></p>
+				</article>
 			</section>
 		</main>
 	</body>
