@@ -4,9 +4,11 @@ const port = process.env.PORT || 3000
 
 const issues = require('./public/src/data/issues.json')
 
-var mongoose = require('mongoose')
-var bodyParser = require('body-parser')
-var authentication = require('./authentication')
+const Twit = require('twit')
+
+const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
+const authentication = require('./authentication')
 
 app.use(bodyParser.json())
 app.use(
@@ -14,7 +16,7 @@ app.use(
     extended: false
   })
 )
-//connect to MongoDB
+// connect to MongoDB
 mongoose.connect(
   'mongodb://wikiminds:wikiminds1@ds233737.mlab.com:33737/wikiminds'
 )
@@ -42,8 +44,29 @@ app.get('/details/:id', (req, res) =>
 //   res.status(404).render('pages/404')
 // })
 
-//Post requests
+// post requests
 app.post('/register', authentication.register)
 app.post('/login', authentication.login)
+
+let areacode = 23424977
+
+// twitter keys
+let T = new Twit({
+  consumer_key: 'YFPrRu0ynMMj360eNC2jd91mS',
+  consumer_secret: 'dnwqyvnXONB1ef129N6JRBSsvWZGKNGPK8kCiAIdImlY6dW8RU',
+  access_token: '1118092957402456066-T3NGbV0yeWBjBMzMwdwaPhagjsuw9A',
+  access_token_secret: 'unbxJzG1sZoQFMwKItp5Su5jk9wMwHIH3tPKhrdLEEwlY'
+})
+
+function getTrends(areacode){
+  return T.get('trends/place', {id: areacode}).then(result => {
+    return (tweetsWithVolume = result.data[0].trends.filter(tweet=>{
+      console.log(tweet)
+
+    }))
+  })
+}
+
+getTrends(areacode)
 
 app.listen(port, () => console.log(`Wikiminds listening on port ${port}!`))
