@@ -13,6 +13,9 @@ var IssueSchema = new mongoose.Schema({
   },
   category: {
     type: String
+  },
+  votes: {
+    type: String
   }
 })
 

@@ -4,7 +4,7 @@
 	</button>
 	<img class="m-card--image" src="./../../src/img/test-image.jpg" alt="">
 	<span class="m-card--category"><%= issue.category%></span>
-	<span class=m-card--votes><%= Math.floor(Math.random() * Math.floor(300)) %><i class="material-icons md-14">star</i></span>
+	<span class=m-card--votes><%= issue.votes %><i class="material-icons md-14">star</i></span>
 	<h3 class="m-card--title"><%= issue.title %></h3>
 	<p class="m-card--short-title"><%= issue.meta_description %></p>
 	<a href="/details/<%=issue._id%>">
