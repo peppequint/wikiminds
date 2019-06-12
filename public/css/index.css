@@ -6,6 +6,7 @@
   --color-green: #00d398;
   --color-yellow: #ffd794;
   --color-black: #334a52;
+  --color-grey-light: #96afb8;
   --color-grey-blue: #f4f5f7;
 
   --color-body-heading: #061e25;
@@ -49,12 +50,14 @@ h2,
 }
 
 h3,
+legend,
 .m-heading--lg {
   font-size: 1.25rem;
   font-weight: 700;
 }
 
 h4,
+label,
 .m-heading--md {
   font-size: 1rem;
   font-weight: 800;
@@ -101,7 +104,26 @@ input,
 textarea {
   background: none;
   border: 0;
+  color: var(--color-black);
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
   outline: none;
+}
+
+textarea {
+  line-height: 1.25rem;
+  resize: none;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
 }
 
 /* base icons */
@@ -193,7 +215,7 @@ textarea {
   margin: 0.75rem 1rem 2rem;
   overflow: hidden;
   position: relative;
-  transition: .2s ease-in;
+  transition: 0.2s ease-in;
 }
 
 .m-card:hover {
@@ -228,7 +250,6 @@ textarea {
   text-transform: uppercase;
   width: 10rem;
 }
-
 
 .m-card--icon-star > i {
   color: var(--color-grey-blue);
@@ -295,11 +316,11 @@ textarea {
 }
 
 .m-detail--header:after {
-  background:rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.45);
   content: '\A';
   height: 100%;
   left: 0;
-  position: absolute; 
+  position: absolute;
   top: 0;
   width: 100%;
 }
@@ -316,4 +337,18 @@ textarea {
 
 .m-detail--information {
   margin: 0.75rem 1rem 2rem;
+}
+
+/* layout form */
+.m-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0.75rem 1rem 2rem;
+}
+
+.m-fieldset--text {
+  border: 2px solid var(--color-grey-light);
+  font-size: 0.75rem;
+  margin: 0.5rem 0 1rem;
+  padding: 0.75rem 1rem;
 }

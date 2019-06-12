@@ -6,20 +6,22 @@
     <body>
         <% include ../partials/header%>
         <main class="l-container">
-            <form class="m-form" action="/newissue" method="post">
-                <fieldset class="m-form--fieldset">
+            <section class="m-section">
+                <form class=" m-form" action="/newissue" method="post">
                     <legend class="m-fieldset--title">Create issue</legend>
-                    <label for="title">Title</label>
-                    <input id="title" type="text" name="title">
-                    <label for="meta-description">Description</label>
-                    <input id="meta-description" type="text" name="meta_description">
-                    <label for="upload">Upload</label>
-                    <input id="upload" type="text" name="upload">
-                    <label for="category">Category</label>
-                    <input id="catergory" type="radio" name="category">
-                    <button type="submit">Post</button>
-                </fieldset>
-            </form>
+                    <label class="m-fieldset--label" for="title">Title</label>
+                    <input class="m-fieldset--input m-fieldset--text" id="title" type="text" name="title">
+                    <label class="m-fieldset--label" for="meta-description">Meta description</label>
+                    <input class="m-fieldset--input m-fieldset--text" id="meta-description" type="text" name="meta_description">
+                    <label class="m-fieldset--label" for="description">Description</label>
+                    <textarea class="m-fieldset--input m-fieldset--text" rows="5" maxlength="250" type="text" name="description" wrap="hard"></textarea>
+                    <label class="m-fieldset--label" for="upload">Upload</label>
+                    <input class="m-fieldset--input" id="upload" type="text" name="upload">
+                    <label class="m-fieldset--label" for="category">Category</label>
+                    <input class="m-fieldset--input" id="catergory" type="radio" name="category">
+                    <button class="m-fieldset--button" type="submit">Post</button>
+                </form>
+            </section>
         </main>
     </body>
 </html>
