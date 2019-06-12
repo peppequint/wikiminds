@@ -9,6 +9,7 @@ const Twit = require('twit')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const authentication = require('./authentication')
+const dataHandler = require('./data')
 
 app.use(bodyParser.json())
 app.use(
@@ -49,7 +50,7 @@ app.get('*', function(req, res) {
 app.post('/register', authentication.register)
 app.post('/login', authentication.login)
 
-app.post('/newissue', authentication.login)
+app.post('/newissue', dataHandler.upload)
 
 let areacode = 23424977
 let q1 = 'environment'
