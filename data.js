@@ -11,17 +11,17 @@ function upload(req, res) {
     upload: req.body.upload,
     category: req.body.category,
     votes: Math.floor(Math.random() * Math.floor(300)),
-    popularity: twitterModule
-      .checkPopularity(req.body.category)
-      .then(popularity => {
-        return popularity
-      })
+    popularity: 0
   }
-  Issue.create(issue, function(err, newUser) {
-    if (err) {
-      res.send(err)
-    }
-    res.send('Issue ' + issue.title + ' has been added')
+  // check the popularity using twitter
+  twitterModule.checkPopularity(req.body.category).then(popularity => {
+    issue.popularity = popularity
+    Issue.create(issue, function(err, newUser) {
+      if (err) {
+        res.send(err)
+      }
+      res.send('Issue ' + issue.title + ' has been added')
+    })
   })
 }
 
