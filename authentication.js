@@ -1,12 +1,11 @@
 var User = require('./public/models/user')
 var bcrypt = require('bcrypt')
-var multer = require('multer')
 
+// registering a new user
 function register(req, res) {
-  //Get the form data and call them user
-  console.log(req.body.username)
+  // get the form data
   var user = req.body
-  //Check if the username already exists, and if thats the case tell the user.
+  // check if the username already exists, and if thats the case tell the user.
   return User.findOne(
     {
       username: user.username
@@ -28,13 +27,13 @@ function register(req, res) {
   )
 }
 
-//Login function
+// login function
 function login(req, res) {
-  //Take username from body
+  // take username from body
   var username = req.body.username
 
-  //Check if username exists and if it does check username and hash
-  //Also initiate a session to further track whether the user is logged in
+  // check if username exists and if it does check username and hash
+  // TODO initiate a session to further track whether the user is logged in
   User.findOne(
     {
       username: username
@@ -48,7 +47,6 @@ function login(req, res) {
           bcrypt.compareSync(req.body.password, result.password)
         ) {
           res.send('login correct')
-          //return res.redirect('/')
         } else {
           res.send('Wrong password')
         }
@@ -57,7 +55,7 @@ function login(req, res) {
   )
 }
 
-//Export functions to be used in routes.js
+// export functions to be used in routes.js
 module.exports = {
   register: register,
   login: login

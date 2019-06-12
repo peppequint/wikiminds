@@ -1,9 +1,9 @@
 var Issue = require('./public/models/issue')
 const twitterModule = require('./twitter')
 
+// uploading a new issue
 function upload(req, res) {
-  //Get the form data and call them user
-  console.log(req.body)
+  // get the form data and refactor it to a standard issue format
   var issue = {
     title: req.body.title,
     meta_description: req.body.meta_description,
@@ -16,6 +16,7 @@ function upload(req, res) {
   // check the popularity using twitter
   twitterModule.checkPopularity(req.body.category).then(popularity => {
     issue.popularity = popularity
+    // add the new issue to the database
     Issue.create(issue, function(err, newUser) {
       if (err) {
         res.send(err)
@@ -25,12 +26,15 @@ function upload(req, res) {
   })
 }
 
+// datahandler to get details/all issues
 const handler = {
+  // get a single issue
   getDetail: id => {
     return Issue.findOne({ _id: id }, issue => {
       return issue
     })
   },
+  // retrieve all issues
   getIssues: () => {
     return Issue.find({}, issues => {
       return issues
@@ -38,7 +42,7 @@ const handler = {
   }
 }
 
-//Export functions to be used in server.js
+// export functions to be used in server.js
 module.exports = {
   upload: upload,
   handler: handler

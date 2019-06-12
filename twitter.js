@@ -1,5 +1,6 @@
 const Twit = require('twit')
 
+// testing vars
 let areacode = 23424977
 let q1 = 'environment'
 let q2 = 'society'
@@ -13,6 +14,7 @@ let T = new Twit({
   access_token_secret: 'unbxJzG1sZoQFMwKItp5Su5jk9wMwHIH3tPKhrdLEEwlY'
 })
 
+// function to determine twitter relevance of a certrain keyword
 function checkPopularity(keyword) {
   return T.get('search/tweets', {
     q: keyword,
