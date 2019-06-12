@@ -41,10 +41,9 @@ app.get('/details/:id', (req, res) =>
   })
 )
 
-//
-// app.get('*', function(req, res) {
-//   res.status(404).render('pages/404')
-// })
+app.get('*', function(req, res) {
+  res.status(404).render('404')
+})
 
 // post requests
 app.post('/register', authentication.register)
