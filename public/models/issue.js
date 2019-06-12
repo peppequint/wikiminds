@@ -5,10 +5,10 @@ var IssueSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
-  description: {
+  meta_description: {
     type: String
   },
-  image: {
+  upload: {
     type: String
   },
   category: {
