@@ -27,7 +27,11 @@ app.use(express.static('public'))
 app.set('view engine', 'ejs')
 app.set('views', './public/views/pages')
 
-app.get('/', (req, res) => res.render('index', { data: issues }))
+app.get('/', (req, res) =>
+  dataHandler.handler
+    .getAll()
+    .then(issues => res.render('index', { data: issues }))
+)
 
 app.get('/profile', (req, res) => res.render('profile'))
 
@@ -37,9 +41,9 @@ app.get('/login', (req, res) => res.render('login'))
 app.get('/issue', (req, res) => res.render('issue'))
 
 app.get('/details/:id', (req, res) =>
-  res.render('detail', {
-    data: issues.issues.find(issue => issue._id === req.params.id)
-  })
+  dataHandler.handler
+    .getDetail(req.params.id)
+    .then(issue => res.render('detail', { issue: issue }))
 )
 
 app.get('*', function(req, res) {
