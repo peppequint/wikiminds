@@ -2,8 +2,8 @@ const Twit = require('twit')
 
 let areacode = 23424977
 let q1 = 'environment'
-let q2 = 'plastic'
-let q3 = 'sealife'
+let q2 = 'society'
+let q3 = 'politics'
 
 // twitter keys
 let T = new Twit({
@@ -20,11 +20,12 @@ function checkPopularity(keyword) {
     result_type: 'popular'
   }).then(result => {
     return result.data.statuses.length
-    // return (tweetsWithVolume = result.data.filter(tweets => {
-    //   console.log(tweets)
-    // }))
   })
 }
+
+checkPopularity(q1).then(value => console.log('env ' + value))
+checkPopularity(q2).then(value => console.log('society ' + value))
+checkPopularity(q3).then(value => console.log('politics ' + value))
 
 module.exports = {
   checkPopularity: checkPopularity
