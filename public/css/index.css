@@ -108,12 +108,23 @@ textarea {
   font-family: var(--font-primary);
   font-size: 0.9rem;
   letter-spacing: 1px;
+  margin: 0;
   outline: none;
+  transition: 0.2s ease-in;
 }
 
 textarea {
   line-height: 1.25rem;
   resize: none;
+}
+
+input:focus,
+textarea:focus {
+  transform: scale(1.015);
+}
+
+input[type='file'] {
+  display: none;
 }
 
 fieldset {
@@ -346,9 +357,37 @@ legend {
   margin: 0.75rem 1rem 2rem;
 }
 
+.m-fieldset--label {
+  margin-bottom: 0.5rem;
+}
+
 .m-fieldset--text {
   border: 2px solid var(--color-grey-light);
   font-size: 0.75rem;
-  margin: 0.5rem 0 1rem;
+  margin-bottom: 1rem;
   padding: 0.75rem 1rem;
+}
+
+.m-fieldset--upload {
+  align-items: center;
+  border: 2px solid var(--color-grey-light);
+  cursor: pointer;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.m-fieldset--upload > i {
+  color: var(--color-grey-light);
+}
+
+.m-fieldset--label-radio {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  font-weight: 500;
+  justify-content: space-between;
+  margin: 0.5rem 0;
 }
