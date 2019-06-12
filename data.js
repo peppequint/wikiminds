@@ -1,4 +1,5 @@
 var Issue = require('./public/models/issue')
+const twitterModule = require('./twitter')
 
 function upload(req, res) {
   //Get the form data and call them user
@@ -9,7 +10,12 @@ function upload(req, res) {
     description: req.body.description,
     upload: req.body.upload,
     category: req.body.category,
-    votes: Math.floor(Math.random() * Math.floor(300))
+    votes: Math.floor(Math.random() * Math.floor(300)),
+    popularity: twitterModule
+      .checkPopularity(req.body.category)
+      .then(popularity => {
+        return popularity
+      })
   }
   Issue.create(issue, function(err, newUser) {
     if (err) {
