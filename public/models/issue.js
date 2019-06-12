@@ -16,6 +16,9 @@ var IssueSchema = new mongoose.Schema({
   },
   votes: {
     type: String
+  },
+  popularity: {
+    type: String
   }
 })
 
