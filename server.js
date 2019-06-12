@@ -33,6 +33,8 @@ app.get('/profile', (req, res) => res.render('profile'))
 app.get('/register', (req, res) => res.render('register'))
 app.get('/login', (req, res) => res.render('login'))
 
+app.get('/issue', (req, res) => res.render('issue'))
+
 app.get('/details/:id', (req, res) =>
   res.render('detail', {
     data: issues.issues.find(issue => issue._id === req.params.id)
