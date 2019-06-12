@@ -1,15 +1,27 @@
 var Issue = require('./public/models/issue')
-var ObjectId = require('mongodb').ObjectID
+const twitterModule = require('./twitter')
+
 function upload(req, res) {
   //Get the form data and call them user
   console.log(req.body)
-  var issue = req.body
-
+  var issue = {
+    title: req.body.title,
+    meta_description: req.body.meta_description,
+    description: req.body.description,
+    upload: req.body.upload,
+    category: req.body.category,
+    votes: Math.floor(Math.random() * Math.floor(300)),
+    popularity: twitterModule
+      .checkPopularity(req.body.category)
+      .then(popularity => {
+        return popularity
+      })
+  }
   Issue.create(issue, function(err, newUser) {
     if (err) {
       res.send(err)
     }
-    res.send('Issue' + issue.title + ' has been added')
+    res.send('Issue ' + issue.title + ' has been added')
   })
 }
 
@@ -25,8 +37,6 @@ const handler = {
     })
   }
 }
-
-//handler.getDetail().then(value => console.log(value))
 
 //Export functions to be used in server.js
 module.exports = {
