@@ -62,7 +62,6 @@ function getTrends(areacode){
   return T.get('trends/place', {id: areacode}).then(result => {
     return (tweetsWithVolume = result.data[0].trends.filter(tweet=>{
       console.log(tweet)
-
     }))
   })
 }
