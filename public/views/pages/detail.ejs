@@ -9,13 +9,13 @@
 			<section class="m-section m-detail">
 				<header class="m-detail--header">
 					<img class="m-detail--image" src="./../../src/img/test-image.jpg" alt="">
-					<h1><%= data.name%>%></h1>
-					<h2><%= data.short_title %></h2>
-					<span><%= data.votes %></span>
-					<span><%= data.genre%></span>
+					<h1><%= issue.title%>%></h1>
+					<h2><%= issue.meta_description %></h2>
+					<span><%= Math.floor(Math.random() * Math.floor(300)) %></span>
+					<span><%= issue.category%></span>
 				</header>
 				<article class="m-detail--information">
-					<p class="m-information--paragraph"><%= data.description%></p>
+					<p class="m-information--paragraph"><%= issue.meta_description%></p>
 				</article>
 			</section>
 		</main>

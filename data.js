@@ -1,5 +1,5 @@
 var Issue = require('./public/models/issue')
-
+var ObjectId = require('mongodb').ObjectID
 function upload(req, res) {
   //Get the form data and call them user
   console.log(req.body)
@@ -9,11 +9,27 @@ function upload(req, res) {
     if (err) {
       res.send(err)
     }
-    res.send('Account ' + issue.title + ' is now active')
+    res.send('Issue' + issue.title + ' has been added')
   })
 }
 
-//Export functions to be used in routes.js
+const handler = {
+  getDetail: id => {
+    return Issue.findOne({ _id: id }, issue => {
+      return issue
+    })
+  },
+  getIssues: () => {
+    return Issue.find({}, issues => {
+      return issues
+    })
+  }
+}
+
+//handler.getDetail().then(value => console.log(value))
+
+//Export functions to be used in server.js
 module.exports = {
-  upload: upload
+  upload: upload,
+  handler: handler
 }
