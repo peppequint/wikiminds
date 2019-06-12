@@ -50,6 +50,8 @@ app.get('/details/:id', (req, res) =>
 app.post('/register', authentication.register)
 app.post('/login', authentication.login)
 
+app.post('/newissue', authentication.login)
+
 let areacode = 23424977
 let q1 = 'environment'
 let q2 = 'plastic'
@@ -76,6 +78,6 @@ function getTrends(areacode) {
   })
 }
 
-getTrends(areacode)
+//getTrends(areacode)
 
 app.listen(port, () => console.log(`Wikiminds listening on port ${port}!`))

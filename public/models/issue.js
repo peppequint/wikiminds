@@ -1,14 +1,18 @@
 var mongoose = require('mongoose')
 var IssueSchema = new mongoose.Schema({
-  username: {
+  title: {
     type: String,
-    unique: true,
     required: true,
     trim: true
   },
-  password: {
-    type: String,
-    required: true
+  description: {
+    type: String
+  },
+  image: {
+    type: String
+  },
+  category: {
+    type: String
   }
 })
 
