@@ -15,7 +15,8 @@ app.use(
 )
 // connect to MongoDB
 mongoose.connect(
-  'mongodb://wikiminds:wikiminds1@ds233737.mlab.com:33737/wikiminds'
+  'mongodb://wikiminds:wikiminds1@ds233737.mlab.com:33737/wikiminds',
+  { useNewUrlParser: true }
 )
 
 app.use(express.static('public'))
