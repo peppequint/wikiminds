@@ -49,6 +49,9 @@ app.post('/register', authentication.register)
 app.post('/login', authentication.login)
 
 let areacode = 23424977
+let q1 = 'environment'
+let q2 = 'plastic'
+let q3 = 'sealife'
 
 // twitter keys
 let T = new Twit({
@@ -58,12 +61,16 @@ let T = new Twit({
   access_token_secret: 'unbxJzG1sZoQFMwKItp5Su5jk9wMwHIH3tPKhrdLEEwlY'
 })
 
-function getTrends(areacode){
-  return T.get('trends/place', {id: areacode}).then(result => {
-    return (tweetsWithVolume = result.data[0].trends.filter(tweet=>{
-      console.log(tweet)
-
-    }))
+function getTrends(areacode) {
+  return T.get('search/tweets', {
+    q: q2,
+    count: 100,
+    result_type: 'popular'
+  }).then(result => {
+    console.log(result.data.statuses.length)
+    // return (tweetsWithVolume = result.data.filter(tweets => {
+    //   console.log(tweets)
+    // }))
   })
 }
 
