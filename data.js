@@ -14,17 +14,16 @@ function upload(req, res) {
 }
 
 const handler = {
-  getAll: () => {
-    return handler.getIssues
-  },
   getDetail: id => {
     return Issue.findOne({ _id: id }, issue => {
       return issue
     })
   },
-  getIssues: Issue.find({}, issues => {
-    return issues
-  })
+  getIssues: () => {
+    return Issue.find({}, issues => {
+      return issues
+    })
+  }
 }
 
 //handler.getDetail().then(value => console.log(value))

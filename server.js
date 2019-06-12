@@ -2,14 +2,12 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000
 
-const issues = require('./public/src/data/issues.json')
-
 const Twit = require('twit')
 
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const authentication = require('./authentication')
-const dataHandler = require('./data')
+const data = require('./data')
 
 app.use(bodyParser.json())
 app.use(
@@ -28,9 +26,7 @@ app.set('view engine', 'ejs')
 app.set('views', './public/views/pages')
 
 app.get('/', (req, res) =>
-  dataHandler.handler
-    .getAll()
-    .then(issues => res.render('index', { data: issues }))
+  data.handler.getIssues().then(issues => res.render('index', { data: issues }))
 )
 
 app.get('/profile', (req, res) => res.render('profile'))
@@ -41,7 +37,7 @@ app.get('/login', (req, res) => res.render('login'))
 app.get('/issue', (req, res) => res.render('issue'))
 
 app.get('/details/:id', (req, res) =>
-  dataHandler.handler
+  data.handler
     .getDetail(req.params.id)
     .then(issue => res.render('detail', { issue: issue }))
 )
@@ -54,7 +50,7 @@ app.get('*', function(req, res) {
 app.post('/register', authentication.register)
 app.post('/login', authentication.login)
 
-app.post('/newissue', dataHandler.upload)
+app.post('/newissue', data.upload)
 
 let areacode = 23424977
 let q1 = 'environment'
