@@ -9,6 +9,7 @@ var session = require('express-session')
 const app = express()
 const port = process.env.PORT || 3000
 
+// initialize session
 app.use(
   session({
     secret: 'wikiminds',
@@ -17,6 +18,7 @@ app.use(
   })
 )
 
+// create a session object to check whether a user is logged in on all pages
 app.use(function(req, res, next) {
   res.locals.session = req.session
   next()
