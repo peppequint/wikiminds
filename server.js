@@ -50,7 +50,13 @@ app.get('/details/:id', (req, res) =>
 )
 
 // profile routes
-app.get('/profile', (req, res) => res.render('profile'))
+app.get('/profile', (req, res) => {
+  if (req.session.userId) {
+    res.render('profile')
+  } else {
+    res.render('login')
+  }
+})
 app.get('/register', (req, res) => res.render('register'))
 app.get('/login', (req, res) => res.render('login'))
 
