@@ -58,7 +58,26 @@ app.get('/profile', (req, res) => {
   }
 })
 app.get('/register', (req, res) => res.render('register'))
+
+// login
 app.get('/login', (req, res) => res.render('login'))
+
+// logout
+app.get('/logout', function(req, res, next) {
+  if (req.session) {
+    // delete session object
+    req.session.destroy(function(err) {
+      if (err) {
+        return next(err)
+      } else {
+        return res.render('message', {
+          message: 'You are now logged out',
+          redirect: '/'
+        })
+      }
+    })
+  }
+})
 
 // route for new issues
 app.get('/issue', (req, res) => res.render('issue'))
