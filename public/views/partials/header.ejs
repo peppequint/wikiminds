@@ -10,7 +10,14 @@
 			<a href="/issue" class="m-menu--link"><li class="m-menu--item"><i class="material-icons">note_add</i>Create issue</li></a>
 			<a href="#" class="m-menu--link"><li class="m-menu--item"><i class="material-icons">people</i>Participants</li></a>
 			<a href="#" class="m-menu--link"><li class="m-menu--item"><i class="material-icons">list</i>Categories</li></a>
-			<a href="#" class="m-menu--link"><li class="m-menu--item"><i class="material-icons">message</i>Messages</li></a>
+					<%
+			if(session.userId){
+				%>
+<a href="#" class="m-menu--link"><li class="m-menu--item"><i class="material-icons">message</i>Messages</li></a>
+<a href="#" class="m-menu--link"><li class="m-menu--item"><i class="material-icons">star</i>Favorites</li></a>
+<%
+			}
+		%>
 		</ul>
 	</nav>
 </header>
