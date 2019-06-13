@@ -20,15 +20,15 @@ function checkPopularity(keyword) {
   return T.get('search/tweets', {
     q: keyword,
     count: 100,
-    result_type: 'popular'
+    result_type: 'recent'
   }).then(result => {
     return result.data.statuses.length
   })
 }
 
-// checkPopularity(q1).then(value => console.log('env ' + value))
-// checkPopularity(q2).then(value => console.log('society ' + value))
-// checkPopularity(q3).then(value => console.log('politics ' + value))
+checkPopularity(q1).then(value => console.log('env ' + value))
+checkPopularity(q2).then(value => console.log('society ' + value))
+checkPopularity(q3).then(value => console.log('politics ' + value))
 
 module.exports = {
   checkPopularity: checkPopularity
