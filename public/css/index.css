@@ -202,7 +202,8 @@ legend {
   opacity: 1;
   position: relative;
   transform-origin: 4px 0px;
-  transition: transform 0.2s ease-in, opacity 0.2s ease-in;
+  transition: transform 0.2s ease-in, opacity 0.2s ease-in,
+    background 0.5s ease-in;
   width: 30px;
   z-index: 2;
 }
@@ -220,9 +221,12 @@ legend {
 }
 
 .m-nav--menu {
-  background: var(--color-red);
+  align-items: center;
+  background: var(--color-black);
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  padding: 50px;
+  padding: 10rem 4rem 4rem;
   position: absolute;
   right: 0;
   top: 0;
@@ -233,16 +237,39 @@ legend {
   z-index: 1;
 }
 
+.m-menu--link {
+  width: 100%;
+}
+
+.m-menu--item {
+  align-items: center;
+  color: var(--color-grey-blue);
+  display: flex;
+  flex-direction: row;
+  font-family: var(--font-secondary);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 1.5rem 0;
+  text-transform: uppercase;
+}
+
+.m-menu--item > i {
+  margin-right: 2rem;
+}
+
 .m-header--nav .m-nav--check:checked ~ .m-nav--line:first-of-type {
+  background: var(--color-grey-blue);
   transform: rotate(45deg) translate(0px, -3px);
 }
 
 .m-header--nav .m-nav--check:checked ~ .m-nav--line:nth-child(3) {
+  background: var(--color-grey-blue);
   opacity: 0;
   transform: translateX(50px) scale((0.2, 0.2));
 }
 
 .m-header--nav .m-nav--check:checked ~ .m-nav--line:last-of-type {
+  background: var(--color-grey-blue);
   transform: rotate(-45deg) translate(0, 0px);
 }
 
