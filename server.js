@@ -64,12 +64,14 @@ app.get('/profile', (req, res) => {
     res.render('login')
   }
 })
+
+// register
 app.get('/register', (req, res) => res.render('register'))
 
 // login
 app.get('/login', (req, res) => res.render('login'))
 
-// logout
+// on logout
 app.get('/logout', function(req, res, next) {
   if (req.session) {
     // delete session object
