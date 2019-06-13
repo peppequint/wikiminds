@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const authentication = require('./authentication')
 const data = require('./data')
+require('dotenv').config()
 
 var session = require('express-session')
 
@@ -32,10 +33,7 @@ app.use(
   })
 )
 // connect to MongoDB hosted by mlab
-mongoose.connect(
-  'mongodb://wikiminds:wikiminds1@ds233737.mlab.com:33737/wikiminds',
-  { useNewUrlParser: true }
-)
+mongoose.connect(process.env.DB_MONGOLINK, { useNewUrlParser: true })
 
 // define static folder
 app.use(express.static('public'))
@@ -64,12 +62,14 @@ app.get('/profile', (req, res) => {
     res.redirect('/login')
   }
 })
+
+// register
 app.get('/register', (req, res) => res.render('register'))
 
 // login
 app.get('/login', (req, res) => res.render('login'))
 
-// logout
+// on logout
 app.get('/logout', function(req, res, next) {
   if (req.session) {
     // delete session object

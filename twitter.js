@@ -1,4 +1,5 @@
 const Twit = require('twit')
+require('dotenv').config()
 
 // testing vars
 let areacode = 23424977
@@ -8,13 +9,13 @@ let q3 = 'politics'
 
 // twitter keys
 let T = new Twit({
-  consumer_key: 'YFPrRu0ynMMj360eNC2jd91mS',
-  consumer_secret: 'dnwqyvnXONB1ef129N6JRBSsvWZGKNGPK8kCiAIdImlY6dW8RU',
-  access_token: '1118092957402456066-T3NGbV0yeWBjBMzMwdwaPhagjsuw9A',
-  access_token_secret: 'unbxJzG1sZoQFMwKItp5Su5jk9wMwHIH3tPKhrdLEEwlY'
+  consumer_key: process.env.DB_consumer_key,
+  consumer_secret: process.env.DB_consumer_secret,
+  access_token: process.env.DB_access_token,
+  access_token_secret: process.env.DB_access_token_secret
 })
 
-// function to determine twitter relevance of a certrain keyword
+// function to determine twitter relevance of a certain keyword
 function checkPopularity(keyword) {
   return T.get('search/tweets', {
     q: keyword,
