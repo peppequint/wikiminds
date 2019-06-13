@@ -4,8 +4,18 @@ const bodyParser = require('body-parser')
 const authentication = require('./authentication')
 const data = require('./data')
 
+var session = require('express-session')
+
 const app = express()
 const port = process.env.PORT || 3000
+
+app.use(
+  session({
+    secret: 'wikiminds',
+    resave: true,
+    saveUninitialized: false
+  })
+)
 
 // body parser for form data
 app.use(bodyParser.json())
