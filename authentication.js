@@ -7,7 +7,10 @@ function register(req, res) {
   var user = req.body
   if (!req.body.username || !req.body.password) {
     console.log('no username or password')
-    return res.render('register')
+    return res.render('message', {
+      message: 'The username/password fields can`t be empty',
+      redirect: '/register'
+    })
   }
   // check if the username already exists, and if thats the case tell the user.
   return User.findOne(
@@ -16,16 +19,27 @@ function register(req, res) {
     },
     function(err, name) {
       if (name) {
-        res.send('The username ' + name.username + ' is taken!')
+        return res.render('message', {
+          message:
+            'The username ' +
+            name.username +
+            ' is taken, please try another username',
+          redirect: '/register'
+        })
       } else {
         // otherwise hash the password (auto generated salt and 5 iterations) and create a user with the input from the form
         user.password = bcrypt.hashSync(user.password, 5)
         User.create(user, function(err, newUser) {
           if (err) {
-            console.log(err)
-            return res.render('register')
+            return res.render('message', {
+              message: err,
+              redirect: '/register'
+            })
           }
-          res.send('Account ' + user.username + ' is now active')
+          return res.render('message', {
+            message: 'Your account ' + user.username + ' is now active!',
+            redirect: '/'
+          })
         })
       }
     }
@@ -45,7 +59,13 @@ function login(req, res) {
     },
     function(err, result) {
       if (!result) {
-        res.send('The username ' + username + ' does not exist')
+        return res.render('message', {
+          message:
+            'The username ' +
+            username +
+            ' does not exist in our database, please try again',
+          redirect: '/login'
+        })
       } else {
         if (
           username === result.username &&
@@ -54,7 +74,10 @@ function login(req, res) {
           req.session.userId = result._id
           return res.redirect('/')
         } else {
-          return res.redirect('login')
+          return res.render('message', {
+            message: 'Your username/password is incorrect, please try again',
+            redirect: '/login'
+          })
         }
       }
     }
