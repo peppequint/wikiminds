@@ -16,12 +16,16 @@ function upload(req, res) {
   // check the popularity using twitter
   twitterModule.checkPopularity(req.body.category).then(popularity => {
     issue.popularity = popularity
+    console.log(issue)
     // add the new issue to the database
     Issue.create(issue, function(err, newUser) {
       if (err) {
         res.send(err)
       }
-      res.send('Issue ' + issue.title + ' has been added')
+      res.render('message', {
+        message: issue.title + ' has been added',
+        redirect: '/'
+      })
     })
   })
 }
