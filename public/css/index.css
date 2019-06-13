@@ -112,7 +112,7 @@ textarea {
   border: 0;
   color: var(--color-black);
   font-family: var(--font-primary);
-  font-size: 0.9rem;
+  font-size: 1rem;
   letter-spacing: 1px;
   margin: 0;
   outline: none;
@@ -339,6 +339,7 @@ legend {
 
 .m-card--icon {
   cursor: pointer;
+  font-size: 0.9rem;
   height: 3rem;
   padding: 0;
   position: absolute;
@@ -382,6 +383,7 @@ legend {
   background: var(--color-black);
   padding: 0.25rem 0.75rem;
   position: absolute;
+  text-transform: capitalize;
   top: 50%;
 }
 
@@ -469,6 +471,14 @@ legend {
   border: 2px solid var(--color-grey-light);
   font-size: 1rem;
   margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+}
+
+.m-fieldset--button {
+  background: var(--color-black);
+  border: 2px solid var(--color-black);
+  color: var(--color-grey-blue);
+  margin-top: 1rem;
   padding: 0.75rem 1rem;
 }
 
