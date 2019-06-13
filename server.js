@@ -61,7 +61,7 @@ app.get('/profile', (req, res) => {
   if (req.session.userId) {
     res.render('profile')
   } else {
-    res.render('login')
+    res.redirect('/login')
   }
 })
 app.get('/register', (req, res) => res.render('register'))
