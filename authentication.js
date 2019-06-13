@@ -6,7 +6,6 @@ function register(req, res) {
   // get the form data
   var user = req.body
   if (!req.body.username || !req.body.password) {
-    console.log('no username or password')
     return res.render('message', {
       message: 'The username/password fields can`t be empty',
       redirect: '/register'
