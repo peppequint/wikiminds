@@ -3,17 +3,21 @@
         <head>
             <% include ../partials/head %>
         </head>
-        <% include ../partials/header %>
-        <main class="l-container">
-            <form class="login" action="/login" method="POST">
-                <h1>Log in</h1>
-                Username: <br>
-                <input type="text" name="username" value="">
-                <br>Password: <br>
-                <input type="password" name="password" value="">
-                <button type="submit">Login</button>
-                <a href="/register"><br>Don't have an account yet?</a>
-            </form>
-        </main>
+        <body>
+            <% include ../partials/header %>
+            <main class="l-container">
+                <section class="m-section">
+                    <form class="m-form" action="/login" method="post">
+                        <legend class="m-fieldset--title m-section--heading m-section--heading-red">Log in</legend>
+                        <label class="m-fieldset--label" for="username">Username</label>
+                        <input class="m-fieldset--input m-fieldset--text" id="username" type="text" name="username">
+                        <label class="m-fieldset--label" for="password">Password</label>
+                        <input class="m-fieldset--input m-fieldset--text" id="password" type="text" name="password">
+                        <button class="m-fieldset--button" type="submit">Login</button>
+                        <a href="/register"><span>Don't have an account yet?</span></a>
+                    </form>
+                </section>
+            </main>
+        </body>
     </html>
 </html>
