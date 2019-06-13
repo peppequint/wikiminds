@@ -25,9 +25,9 @@ function checkPopularity(keyword) {
   })
 }
 
-checkPopularity(q1).then(value => console.log('env ' + value))
-checkPopularity(q2).then(value => console.log('society ' + value))
-checkPopularity(q3).then(value => console.log('politics ' + value))
+// checkPopularity(q1).then(value => console.log('env ' + value))
+// checkPopularity(q2).then(value => console.log('society ' + value))
+// checkPopularity(q3).then(value => console.log('politics ' + value))
 
 module.exports = {
   checkPopularity: checkPopularity
