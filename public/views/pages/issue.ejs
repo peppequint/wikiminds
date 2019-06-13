@@ -16,17 +16,24 @@
                     <label class="m-fieldset--label" for="description">Description</label>
                     <textarea class="m-fieldset--input m-fieldset--text" rows="5" maxlength="250" type="text" name="description" wrap="hard" id="description"></textarea>
                     <label class="m-fieldset--label" for="upload">Upload</label>
-                    <div>
+                    <div class="m-fieldset--upload">
+                        <i class="material-icons md-36">add_photo_alternate</i>
                         <input class="m-fieldset--input" id="upload" type="text" name="upload">
                     </div>
                     <label class="m-fieldset--label" for="category">Category</label>
-                    <div>
-                        <label for="environment">Environment</label>
-                        <input class="m-fieldset--input" id="environment" value="environment" type="radio" name="category">
-                        <label for="politics">Politics</label>
-                        <input class="m-fieldset--input" id="politics" value="politics" type="radio" name="category">
-                        <label for="society">Society</label>
-                        <input class="m-fieldset--input" id="society" value="society" type="radio" name="category">
+                    <div class="m-fieldset--controls">
+                        <label class="m-fieldset--label-radio" for="environment">
+                            Environment
+                            <input class="m-fieldset--input" id="environment" value="environment" type="radio" name="category">
+                        </label>
+                        <label class="m-fieldset--label-radio" for="politics">
+                            Politics
+                            <input class="m-fieldset--input" id="politics" value="politics" type="radio" name="category">
+                        </label>
+                        <label class="m-fieldset--label-radio" for="society">
+                            Society
+                            <input class="m-fieldset--input" id="society" value="society" type="radio" name="category">
+                        </label>
                     </div>
                     <button class="m-fieldset--button" type="submit">Post</button>
                 </form>
