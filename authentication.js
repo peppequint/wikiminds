@@ -5,6 +5,10 @@ var bcrypt = require('bcrypt')
 function register(req, res) {
   // get the form data
   var user = req.body
+  if (!req.body.username || !req.body.password) {
+    console.log('no username or password')
+    return res.render('register')
+  }
   // check if the username already exists, and if thats the case tell the user.
   return User.findOne(
     {
@@ -14,11 +18,12 @@ function register(req, res) {
       if (name) {
         res.send('The username ' + name.username + ' is taken!')
       } else {
-        //Otherwise hash the password (auto generated salt and 5 iterations) and create a user with the input from the form
+        // otherwise hash the password (auto generated salt and 5 iterations) and create a user with the input from the form
         user.password = bcrypt.hashSync(user.password, 5)
         User.create(user, function(err, newUser) {
           if (err) {
-            res.send(err)
+            console.log(err)
+            return res.render('register')
           }
           res.send('Account ' + user.username + ' is now active')
         })
@@ -46,9 +51,10 @@ function login(req, res) {
           username === result.username &&
           bcrypt.compareSync(req.body.password, result.password)
         ) {
-          res.send('login correct')
+          req.session.userId = result._id
+          return res.redirect('/')
         } else {
-          res.send('Wrong password')
+          return res.redirect('login')
         }
       }
     }
