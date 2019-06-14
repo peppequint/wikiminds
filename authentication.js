@@ -37,7 +37,7 @@ function register(req, res) {
           }
           return res.render('message', {
             message: 'Your account ' + user.username + ' is now active!',
-            redirect: '/'
+            redirect: '/login'
           })
         })
       }
