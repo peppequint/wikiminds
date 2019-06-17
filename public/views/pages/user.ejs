@@ -14,7 +14,7 @@
                 <p><%= user.city%></p>
                 <p>Skills:</p>
                 <p><%= user.skills%></p>
-                <h2>Issues:</h2>
+                <h2>Issues added by this user:</h2>
                 <% if(issues[0]){
                     issues.forEach(issue => {
                         %>
@@ -26,9 +26,9 @@
                     })
                     
                  } else {
-                     %><a href='/issue'>You haven't made any issues yet, click here to make one</a><%
+                     %><p>This user has not made any issues yet </p><%
                  } %>
-                <a href="/logout"><button type="submit">Logout</button></a>
+                <a href="#"><button type="submit">Contact this user</button></a>
             </section>    
         </main>
     </body>

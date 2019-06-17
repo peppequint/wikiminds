@@ -12,6 +12,7 @@
 					<h1><%= issue.title %></h1>
 					<span><%= issue.votes %></span>
 					<span><%= issue.category%></span>
+					<a href='/users/<%=owner._id%>'><h3><%= owner.username %></h3></a>
 				</header>
 				<nav class="m-nav">
 					<ul class="m-nav--list">
