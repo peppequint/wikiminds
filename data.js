@@ -50,6 +50,12 @@ const handler = {
   },
   deleteIssue: (issueId, ownerId) => {
     return Issue.findOneAndRemove({ _id: issueId, owner: ownerId })
+  },
+  addLike: (issueId, userId) => {
+    return Issue.findOneAndUpdate(
+      { _id: issueId },
+      { $push: { likes: userId } }
+    )
   }
 }
 

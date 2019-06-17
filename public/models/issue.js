@@ -22,6 +22,11 @@ var IssueSchema = new mongoose.Schema({
   votes: {
     type: String
   },
+  likes: [
+    {
+      type: String
+    }
+  ],
   popularity: {
     type: String
   }
