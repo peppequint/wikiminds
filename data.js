@@ -6,6 +6,7 @@ function upload(req, res) {
   // get the form data and refactor it to a standard issue format
   var issue = {
     title: req.body.title,
+    owner: req.session.userId,
     meta_description: req.body.meta_description,
     description: req.body.description,
     upload: req.body.upload,
@@ -16,7 +17,6 @@ function upload(req, res) {
   // check the popularity using twitter
   twitterModule.checkPopularity(req.body.category).then(popularity => {
     issue.popularity = popularity
-    console.log(issue)
     // add the new issue to the database
     Issue.create(issue, function(err, newUser) {
       if (err) {
@@ -43,6 +43,9 @@ const handler = {
     return Issue.find({}, issues => {
       return issues
     })
+  },
+  deleteIssue: (issueId, ownerId) => {
+    return Issue.findOneAndRemove({ _id: issueId, owner: ownerId })
   }
 }
 

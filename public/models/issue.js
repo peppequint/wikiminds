@@ -5,6 +5,11 @@ var IssueSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
+  owner: {
+    type: String,
+    required: true,
+    trim: true
+  },
   meta_description: {
     type: String
   },

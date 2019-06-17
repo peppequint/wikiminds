@@ -54,6 +54,53 @@ app.get('/details/:id', (req, res) =>
     .then(issue => res.render('detail', { issue: issue }))
 )
 
+// delete issue
+app.get('/delete/:id', (req, res) => {
+  if (req.session.userId) {
+    data.handler.deleteIssue(req.params.id, req.session.userId).then(issue => {
+      if (issue) {
+        res.render('message', {
+          message: 'Issue with name ' + issue.title + ' has been deleted',
+          redirect: '/'
+        })
+      } else {
+        res.render('message', {
+          message: 'Permission denied',
+          redirect: '/'
+        })
+      }
+    })
+  } else {
+    res.render('message', {
+      message: 'You are not logged in',
+      redirect: '/'
+    })
+  }
+})
+
+// .then(message => {
+//   console.log(message)
+//   if (message) {
+//     res.render('message', {
+//       message: 'Issue with has been deleted',
+//       redirect: '/'
+//     })
+//   } else {
+//     res.render('message', {
+//       message: 'Issue has not been deleted',
+//       redirect: '/'
+//     })
+//   }
+// })
+
+// data.handler.deleteIssue(req.params.id, req.session.userId).then(issue => {
+//   console.log(issue)
+//   res.render('message', {
+//     message: 'Issue with title ' + issue.title + ' has been deleted',
+//     redirect: '/'
+//   })
+// })
+
 // profile routes
 app.get('/profile', (req, res) => {
   if (req.session.userId) {
@@ -87,8 +134,16 @@ app.get('/logout', function(req, res, next) {
 })
 
 // route for new issues
-app.get('/issue', (req, res) => res.render('issue'))
-
+app.get('/issue', (req, res) => {
+  if (req.session.userId) {
+    res.render('issue')
+  } else {
+    return res.render('message', {
+      message: 'You need to be logged in to create an issue',
+      redirect: '/'
+    })
+  }
+})
 // 404
 app.get('*', function(req, res) {
   res.status(404).render('404')
