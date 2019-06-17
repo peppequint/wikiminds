@@ -49,9 +49,11 @@ app.get('/', (req, res) =>
 
 // detail page route
 app.get('/details/:id', (req, res) =>
-  data.handler
-    .getDetail(req.params.id)
-    .then(issue => res.render('detail', { issue: issue }))
+  data.handler.getDetail(req.params.id).then(issue => {
+    data.handler.getUser(issue.owner).then(user => {
+      res.render('detail', { issue: issue, owner: user })
+    })
+  })
 )
 
 // delete issue
@@ -91,7 +93,7 @@ app.get('/profile', (req, res) => {
   }
 })
 
-app.get('/user/:id', (req, res) => {
+app.get('/users/:id', (req, res) => {
   data.handler.getUser(req.params.id).then(user => {
     data.handler.getIssuesForUser(user._id).then(issues => {
       res.render('user', { user: user, issues: issues })
