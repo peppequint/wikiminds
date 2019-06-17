@@ -78,33 +78,14 @@ app.get('/delete/:id', (req, res) => {
   }
 })
 
-// .then(message => {
-//   console.log(message)
-//   if (message) {
-//     res.render('message', {
-//       message: 'Issue with has been deleted',
-//       redirect: '/'
-//     })
-//   } else {
-//     res.render('message', {
-//       message: 'Issue has not been deleted',
-//       redirect: '/'
-//     })
-//   }
-// })
-
-// data.handler.deleteIssue(req.params.id, req.session.userId).then(issue => {
-//   console.log(issue)
-//   res.render('message', {
-//     message: 'Issue with title ' + issue.title + ' has been deleted',
-//     redirect: '/'
-//   })
-// })
-
 // profile routes
 app.get('/profile', (req, res) => {
   if (req.session.userId) {
-    res.render('profile')
+    data.handler.getUser(req.session.userId).then(user => {
+      data.handler.getIssuesForUser(user._id).then(issues => {
+        res.render('profile', { user: user, issues: issues })
+      })
+    })
   } else {
     res.redirect('/login')
   }

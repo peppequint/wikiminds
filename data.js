@@ -1,4 +1,5 @@
 var Issue = require('./public/models/issue')
+var User = require('./public/models/user')
 const twitterModule = require('./twitter')
 
 // uploading a new issue
@@ -34,15 +35,18 @@ function upload(req, res) {
 const handler = {
   // get a single issue
   getDetail: id => {
-    return Issue.findOne({ _id: id }, issue => {
-      return issue
-    })
+    return Issue.findOne({ _id: id })
+  },
+  // get a single user
+  getUser: id => {
+    return User.findOne({ _id: id })
   },
   // retrieve all issues
   getIssues: () => {
-    return Issue.find({}, issues => {
-      return issues
-    })
+    return Issue.find({})
+  },
+  getIssuesForUser: id => {
+    return Issue.find({ owner: id })
   },
   deleteIssue: (issueId, ownerId) => {
     return Issue.findOneAndRemove({ _id: issueId, owner: ownerId })
