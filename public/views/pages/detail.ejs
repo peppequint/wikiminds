@@ -6,18 +6,26 @@
 	<body>
 		<% include ../partials/header %>
 		<main class="l-container">
-			<section class="m-section m-detail">
+			<section class="m-detail">
 				<header class="m-detail--header">
 					<img class="m-detail--image" src="./../../src/img/test-image.jpg" alt="">
 					<h1><%= issue.title%>%></h1>
-					<h2><%= issue.meta_description %></h2>
 					<span><%= issue.votes %></span>
 					<span><%= issue.category%></span>
 				</header>
+				<nav class="m-nav">
+					<ul class="m-nav--list">
+						<li class="m-list--item m-item--active">Issue</li>
+						<li class="m-list--item m-item--inactive"">Comment</li>
+						<li class="m-list--item m-item--inactive"">Contribute</li>
+					</ul>
+				</nav>
 				<article class="m-detail--information">
 					<p class="m-information--paragraph"><%= issue.meta_description%></p>
 				</article>
 			</section>
 		</main>
+		<% include ../partials/footer %>
+		<script type="text/javascript" src="./../../js/index.js"></script>
 	</body>
 </html>
