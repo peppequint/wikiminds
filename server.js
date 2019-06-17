@@ -93,6 +93,7 @@ app.get('/profile', (req, res) => {
   }
 })
 
+// detail page per user
 app.get('/users/:id', (req, res) => {
   data.handler.getUser(req.params.id).then(user => {
     data.handler.getIssuesForUser(user._id).then(issues => {
