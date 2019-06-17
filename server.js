@@ -91,6 +91,14 @@ app.get('/profile', (req, res) => {
   }
 })
 
+app.get('/user/:id', (req, res) => {
+  data.handler.getUser(req.params.id).then(user => {
+    data.handler.getIssuesForUser(user._id).then(issues => {
+      res.render('user', { user: user, issues: issues })
+    })
+  })
+})
+
 // register
 app.get('/register', (req, res) => res.render('register'))
 
