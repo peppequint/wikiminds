@@ -56,6 +56,23 @@ app.get('/details/:id', (req, res) =>
   })
 )
 
+// liking an issue
+app.get('/details/:id/like', (req, res) => {
+  if (req.session.userId) {
+    data.handler.addLike(req.params.id, req.session.userId).then(issue =>
+      res.render('message', {
+        message: 'You liked ' + issue.title,
+        redirect: '/details/' + issue._id
+      })
+    )
+  } else {
+    res.render('message', {
+      message: 'You need to be logged in to like an issue',
+      redirect: '/login'
+    })
+  }
+})
+
 // delete issue
 app.get('/delete/:id', (req, res) => {
   if (req.session.userId) {
@@ -93,6 +110,7 @@ app.get('/profile', (req, res) => {
   }
 })
 
+// detail page per user
 app.get('/users/:id', (req, res) => {
   data.handler.getUser(req.params.id).then(user => {
     data.handler.getIssuesForUser(user._id).then(issues => {

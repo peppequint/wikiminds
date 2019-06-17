@@ -10,7 +10,7 @@
 				<header class="m-detail--header">
 					<img class="m-detail--image" src="./../../src/img/test-image.jpg" alt="">
 					<h1><%= issue.title %></h1>
-					<span><%= issue.votes %></span>
+					<span><%= issue.likes.length %></span>
 					<span><%= issue.category%></span>
 					<a href='/users/<%=owner._id%>'><h3><%= owner.username %></h3></a>
 				</header>
