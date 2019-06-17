@@ -96,6 +96,7 @@ body {
 }
 
 a {
+  color: inherit;
   text-decoration: none;
 }
 
@@ -459,7 +460,8 @@ legend {
 .m-information {
   display: flex;
   flex-direction: row;
-  overflow: scroll;
+  overflow: hidden;
+  scroll-behavior: smooth;
   width: 100%;
 }
 

@@ -16,27 +16,30 @@
 				</header>
 				<nav class="m-nav">
 					<ul class="m-nav--list">
-						<li class="m-list--item m-item--active">Issue</li>
-						<li class="m-list--item m-item--inactive">Comment</li>
-						<li class="m-list--item m-item--inactive">Contribute</li>
+						<a href="#issue"><li class="m-list--item m-item--active">Issue</li></a>
+						<a href="#comment"><li class="m-list--item m-item--inactive">Comment</li></a>
+						<a href="#contribute"><li class="m-list--item m-item--inactive">Contribute</li></a>
 					</ul>
 				</nav>
 				<article class='m-information'>
-					<section class="m-detail--information m-detail--issue">
+					<section class="m-detail--information m-detail--issue" id="issue">
+						<h1>section1</h1>	
 						<p class="m-information--paragraph"><%= issue.meta_description%></p>
 						<% if(session.userId && issue.owner && issue.owner === session.userId){%>
 						<a href="/edit/<%=issue._id%>">Edit this issue</a>
 						<a href="/delete/<%=issue._id%>">Delete this issue</a>
 						<% } %>
 					</section>
-					<section class="m-detail--information m-detail--comment">
+					<section class="m-detail--information m-detail--comment" id="comment">
+						<h1>section2</h1>
 						<p class="m-information--paragraph"><%= issue.meta_description%></p>
 						<% if(session.userId && issue.owner && issue.owner === session.userId){%>
 						<a href="/edit/<%=issue._id%>">Edit this issue</a>
 						<a href="/delete/<%=issue._id%>">Delete this issue</a>
 						<% } %>
 					</section>
-					<section class='m-detail--information m-detail--contribute'>
+					<section class='m-detail--information m-detail--contribute' id="contribute">
+						<h1>section3</h1>
 						<p class="m-information--paragraph"><%= issue.meta_description%></p>
 						<% if(session.userId && issue.owner && issue.owner === session.userId){%>
 						<a href="/edit/<%=issue._id%>">Edit this issue</a>
