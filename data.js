@@ -53,7 +53,7 @@ const handler = {
   },
   addLike: (issueId, userId) => {
     return Issue.findOneAndUpdate(
-      { _id: issueId },
+      { _id: issueId, likes: { $ne: userId } },
       { $push: { likes: userId } }
     )
   }

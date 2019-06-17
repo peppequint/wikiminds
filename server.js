@@ -59,12 +59,19 @@ app.get('/details/:id', (req, res) =>
 // liking an issue
 app.get('/details/:id/like', (req, res) => {
   if (req.session.userId) {
-    data.handler.addLike(req.params.id, req.session.userId).then(issue =>
-      res.render('message', {
-        message: 'You liked ' + issue.title,
-        redirect: '/details/' + issue._id
-      })
-    )
+    data.handler.addLike(req.params.id, req.session.userId).then(issue => {
+      if (issue) {
+        res.render('message', {
+          message: 'You liked ' + issue.title,
+          redirect: '/details/' + issue._id
+        })
+      } else {
+        res.render('message', {
+          message: 'You already liked this post',
+          redirect: '/'
+        })
+      }
+    })
   } else {
     res.render('message', {
       message: 'You need to be logged in to like an issue',
