@@ -9,23 +9,39 @@
 			<section class="m-detail">
 				<header class="m-detail--header">
 					<img class="m-detail--image" src="./../../src/img/test-image.jpg" alt="">
-					<h1><%= issue.title%>%></h1>
+					<h1><%= issue.title %></h1>
 					<span><%= issue.votes %></span>
 					<span><%= issue.category%></span>
 				</header>
 				<nav class="m-nav">
 					<ul class="m-nav--list">
 						<li class="m-list--item m-item--active">Issue</li>
-						<li class="m-list--item m-item--inactive"">Comment</li>
-						<li class="m-list--item m-item--inactive"">Contribute</li>
+						<li class="m-list--item m-item--inactive">Comment</li>
+						<li class="m-list--item m-item--inactive">Contribute</li>
 					</ul>
 				</nav>
-				<article class="m-detail--information">
-					<p class="m-information--paragraph"><%= issue.meta_description%></p>
-					<% if(session.userId && issue.owner && issue.owner === session.userId){%>
-					<a href="/edit/<%=issue._id%>">Edit this issue</a>
-					<a href="/delete/<%=issue._id%>">Delete this issue</a>
-					<% } %>
+				<article class='m-information'>
+					<section class="m-detail--information m-detail--issue">
+						<p class="m-information--paragraph"><%= issue.meta_description%></p>
+						<% if(session.userId && issue.owner && issue.owner === session.userId){%>
+						<a href="/edit/<%=issue._id%>">Edit this issue</a>
+						<a href="/delete/<%=issue._id%>">Delete this issue</a>
+						<% } %>
+					</section>
+					<section class="m-detail--information m-detail--comment">
+						<p class="m-information--paragraph"><%= issue.meta_description%></p>
+						<% if(session.userId && issue.owner && issue.owner === session.userId){%>
+						<a href="/edit/<%=issue._id%>">Edit this issue</a>
+						<a href="/delete/<%=issue._id%>">Delete this issue</a>
+						<% } %>
+					</section>
+					<section class='m-detail--information m-detail--contribute'>
+						<p class="m-information--paragraph"><%= issue.meta_description%></p>
+						<% if(session.userId && issue.owner && issue.owner === session.userId){%>
+						<a href="/edit/<%=issue._id%>">Edit this issue</a>
+						<a href="/delete/<%=issue._id%>">Delete this issue</a>
+						<% } %>
+					</section>
 				</article>
 			</section>
 		</main>

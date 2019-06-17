@@ -456,8 +456,17 @@ legend {
   width: 100%;
 }
 
+.m-information {
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+  width: 100%;
+}
+
 .m-detail--information {
-  margin: 0.75rem 1rem 2rem;
+  flex: 0 0 100%;
+  padding: 0.75rem 1rem 2rem;
+  width: 100%;
 }
 
 .m-nav {
@@ -478,7 +487,7 @@ legend {
 
 .m-list--item::before {
   background: var(--color-black);
-  bottom: 0;
+  bottom: -3px;
   content: "";
   height: 0.2rem;
   left: 0;
@@ -497,7 +506,7 @@ legend {
 
 .m-item--active::before {
   background: var(--color-black);
-  bottom: 0;
+  bottom: -3px;
   content: "";
   height: 0.2rem;
   left: 0;
