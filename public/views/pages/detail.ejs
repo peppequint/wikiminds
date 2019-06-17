@@ -22,6 +22,10 @@
 				</nav>
 				<article class="m-detail--information">
 					<p class="m-information--paragraph"><%= issue.meta_description%></p>
+					<% if(issue.owner === session.userId){%>
+					<a href="/edit/<%=issue._id%>">Edit this issue</a>
+					<a href="/delete/<%=issue._id%>">Delete this issue</a>
+					<% } %>
 				</article>
 			</section>
 		</main>
