@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Exo:400,500,700,800|Noto+Sans:400,700&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Exo:400,500,700,800|Noto+Sans:400,700&display=swap');
 
 :root {
   --color-red: #ff5e67;
@@ -12,8 +12,8 @@
   --color-body-heading: #061e25;
   --color-body-font: #334a52;
 
-  --font-primary: "Noto Sans", sans-serif;
-  --font-secondary: "Exo", sans-serif;
+  --font-primary: 'Noto Sans', sans-serif;
+  --font-secondary: 'Exo', sans-serif;
 }
 
 body {
@@ -130,7 +130,7 @@ textarea:focus {
   transform: scale(1.015);
 }
 
-input[type="file"] {
+input[type='file'] {
   display: none;
 }
 
@@ -147,6 +147,10 @@ legend {
 /* base icons */
 .material-icons.md-14 {
   font-size: 14px;
+}
+
+.material-icons.md-18 {
+  font-size: 18px;
 }
 
 .material-icons.md-32 {
@@ -307,7 +311,7 @@ legend {
 
 .m-section--heading::before {
   bottom: 0;
-  content: "";
+  content: '';
   height: 3px;
   position: absolute;
   width: 100%;
@@ -439,7 +443,7 @@ legend {
 
 .m-detail--header:after {
   background: rgba(0, 0, 0, 0.45);
-  content: "\A";
+  content: '\A';
   height: 100%;
   left: 0;
   position: absolute;
@@ -471,6 +475,37 @@ legend {
   width: 100%;
 }
 
+.m-comment {
+  border: 2px solid var(--color-grey-light);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.m-comment--title {
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.m-comment--likes {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 2rem;
+  padding: 0.25rem 0;
+  text-align: center;
+  height: 100%;
+  background: var(--color-grey-light);
+  color: var(--color-grey-blue);
+}
+
 .m-nav {
   padding: 0.75rem 1rem;
 }
@@ -490,7 +525,7 @@ legend {
 .m-list--item::before {
   background: var(--color-black);
   bottom: -3px;
-  content: "";
+  content: '';
   height: 0.2rem;
   left: 0;
   position: absolute;
@@ -509,7 +544,7 @@ legend {
 .m-item--active::before {
   background: var(--color-black);
   bottom: -3px;
-  content: "";
+  content: '';
   height: 0.2rem;
   left: 0;
   position: absolute;

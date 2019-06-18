@@ -35,12 +35,13 @@
 					<% if(comments[0]){ %>
 						<% comments.forEach(comment => { %>
 						<article class="m-comment">
-							<span class="m-comment--title">Title</span>
-							<p><%= comment.title %></p>
-							<p class="m-comment--owner">Owner ID</p>
-							<p><%= comment.owner %></p>
-							<span class="m-comment--likes">Likes</span>
-							<p><%= comment.likes.length %> </p>
+							<span class="m-comment--title"><%= comment.title %></span>
+							<p class="m-comment--owner"><%= comment.owner %></p>
+							<div class="m-comment--likes">
+								<i class="material-icons md-18">add</i>
+								<span><%= comment.likes.length %></span>
+								<i class="material-icons md-18">remove</i>
+							</div>
 						</article>
 						<%
 						})
