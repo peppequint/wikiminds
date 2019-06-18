@@ -43,9 +43,10 @@ function upload(req, res) {
 function comment(req, res) {
   if (req.session.userId) {
     var comment = {
+      issue: req.params.id,
       title: req.body.title,
       owner: req.session.userId,
-      description: req.body.description,
+      meta_description: req.body.meta_description,
       category: req.body.category
     }
 
@@ -55,7 +56,7 @@ function comment(req, res) {
       }
       res.render('message', {
         message: comment.title + ' has been added',
-        redirect: '/'
+        redirect: '/details/' + req.params.id + '#comment'
       })
     })
   } else {
@@ -91,6 +92,9 @@ const handler = {
       { _id: issueId, likes: { $ne: userId } },
       { $push: { likes: userId } }
     )
+  },
+  getComments: issueId => {
+    return Comment.find({ issue: issueId })
   }
 }
 

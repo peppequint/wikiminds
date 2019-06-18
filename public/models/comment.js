@@ -1,5 +1,8 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose')
 var CommentSchema = new mongoose.Schema({
+  issue: {
+    type: String
+  },
   title: {
     type: String,
     required: true,
@@ -17,7 +20,7 @@ var CommentSchema = new mongoose.Schema({
       type: String
     }
   ]
-});
+})
 
-var Comment = mongoose.model('Comment', CommentSchema);
-module.exports = Comment;
+var Comment = mongoose.model('Comment', CommentSchema)
+module.exports = Comment

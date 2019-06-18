@@ -32,19 +32,30 @@
 						<% } %>
 					</section>
 					<section class="m-detail--information m-detail--comment" id="comment">
+					<% if(comments[0]){ %>
+						<% comments.forEach(comment => { %>
 						<article class="m-comment">
 							<span class="m-comment--title">Title</span>
-							<p class="m-comment--owner">Owner</p>
+							<p><%= comment.title %></p>
+							<p class="m-comment--owner">Owner ID</p>
+							<p><%= comment.owner %></p>
 							<span class="m-comment--likes">Likes</span>
+							<p><%= comment.likes.length %> </p>
 						</article>
+						<%
+						})
+						}%>
+						<% console.log(comments)%>
 						<% if(session.userId){ %>
-						<form class="m-form" action="/newcomment" method="post">
+						<form class="m-form" action="/newcomment/<%=issue._id%>" method="post">
 							<label class="m-fieldset--label" for="title">Title</label>
 							<input class="m-fieldset--input m-fieldset--text" id="title" type="text" name="title">
-							<label class="m-fieldset--label" for="meta-description">Meta description</label>
-							<input class="m-fieldset--input m-fieldset--text" id="meta-description" type="text" name="meta_description">
+							<label class="m-fieldset--label" for="meta_description">Solution</label>
+							<input class="m-fieldset--input m-fieldset--text" id="meta_description" type="text" name="meta_description">
 							<button class="m-fieldset--button" type="submit">Post</button>
 						</form>
+						<% } else {%>
+						<a href='/login'>Log in to leave a comment! </a>
 						<% } %>
 					</section>
 					<section class='m-detail--information m-detail--contribute' id="contribute">
