@@ -26,9 +26,9 @@ cloudinary.config({
 // image parsing
 const storage = cloudinaryStorage({
   cloudinary: cloudinary,
-  folder: 'demo',
+  folder: 'wikiminds',
   allowedFormats: ['jpg', 'png'],
-  transformation: [{ width: 500, height: 500, crop: 'limit' }]
+  transformation: [{ width: 1000, height: 1000, crop: 'limit' }]
 })
 
 const parser = multer({ storage: storage })
