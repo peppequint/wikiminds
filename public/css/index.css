@@ -144,6 +144,11 @@ legend {
   padding: 0;
 }
 
+.l-header,
+.l-container {
+  overflow-x: hidden;
+}
+
 /* base icons */
 .material-icons.md-14 {
   font-size: 14px;
@@ -242,7 +247,7 @@ legend {
   display: flex;
   flex-direction: column;
   height: 100%;
-  margin: -2.35rem 0 0 2.85rem;
+  margin: -2.45rem 0 0 2.85rem;
   padding: 10rem 4rem 4rem;
   position: absolute;
   transform-origin: 0% 0%;
