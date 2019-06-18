@@ -32,11 +32,19 @@
 						<% } %>
 					</section>
 					<section class="m-detail--information m-detail--comment" id="comment">
-						<h1>section2</h1>
-						<p class="m-information--paragraph"><%= issue.meta_description%></p>
-						<% if(session.userId && issue.owner && issue.owner === session.userId){%>
-						<a href="/edit/<%=issue._id%>">Edit this issue</a>
-						<a href="/delete/<%=issue._id%>">Delete this issue</a>
+						<article class="m-comment">
+							<span class="m-comment--title">Title</span>
+							<p class="m-comment--owner">Owner</p>
+							<span class="m-comment--likes">Likes</span>
+						</article>
+						<% if(session.userId){ %>
+						<form class="m-form" action="/newcomment" method="post">
+							<label class="m-fieldset--label" for="title">Title</label>
+							<input class="m-fieldset--input m-fieldset--text" id="title" type="text" name="title">
+							<label class="m-fieldset--label" for="meta-description">Meta description</label>
+							<input class="m-fieldset--input m-fieldset--text" id="meta-description" type="text" name="meta_description">
+							<button class="m-fieldset--button" type="submit">Post</button>
+						</form>
 						<% } %>
 					</section>
 					<section class='m-detail--information m-detail--contribute' id="contribute">

@@ -40,6 +40,25 @@ function upload(req, res) {
   });
 }
 
+function comment(req, res) {
+  var comment = {
+    title: req.body.title,
+    owner: req.session.userId,
+    description: req.body.description,
+    category: req.body.category
+  };
+
+  Comment.create(comment, function(err, newUser) {
+    if (err) {
+      res.send(err);
+    }
+    res.render('message', {
+      message: comment.title + ' has been added',
+      redirect: '/'
+    });
+  });
+}
+
 // datahandler to get details/all issues
 const handler = {
   // get a single issue
@@ -71,5 +90,6 @@ const handler = {
 // export functions to be used in server.js
 module.exports = {
   upload: upload,
-  handler: handler
+  handler: handler,
+  comment: comment
 };

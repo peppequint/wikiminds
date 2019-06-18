@@ -192,5 +192,6 @@ app.get('*', function(req, res) {
 app.post('/register', authentication.register);
 app.post('/login', authentication.login);
 app.post('/newissue', parser.single('upload'), data.upload);
+app.post('/newcomment', data.comment);
 
 app.listen(port, () => console.log(`Wikiminds listening on port ${port}!`));
