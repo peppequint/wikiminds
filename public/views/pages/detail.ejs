@@ -8,10 +8,11 @@
 		<main class="l-container">
 			<section class="m-detail">
 				<header class="m-detail--header">
-					<img class="m-detail--image" src="./../../src/img/test-image.jpg" alt="">
+					<img class="m-detail--image" src="<%=issue.image%>" alt="">
 					<h1><%= issue.title %></h1>
-					<span><%= issue.likes.length %></span>
-					<span><%= issue.category%></span>
+					<span>Likes: <%= issue.likes.length %></span>
+					<span>Category: <%= issue.category%></span>
+					<p>Posted by:</p>
 					<a href='/users/<%=owner._id%>'><h3><%= owner.username %></h3></a>
 				</header>
 				<nav class="m-nav">

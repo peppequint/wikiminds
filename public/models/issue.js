@@ -29,6 +29,9 @@ var IssueSchema = new mongoose.Schema({
   ],
   popularity: {
     type: String
+  },
+  image: {
+    type: String
   }
 })
 

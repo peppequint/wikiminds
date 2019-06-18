@@ -28,6 +28,7 @@ function register(req, res) {
       } else {
         // otherwise hash the password (auto generated salt and 5 iterations) and create a user with the input from the form
         user.password = bcrypt.hashSync(user.password, 5)
+        // create user
         User.create(user, function(err, newUser) {
           if (err) {
             return res.render('message', {
@@ -51,7 +52,6 @@ function login(req, res) {
   var username = req.body.username
 
   // check if username exists and if it does check username and hash
-  // TODO initiate a session to further track whether the user is logged in
   User.findOne(
     {
       username: username

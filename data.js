@@ -1,10 +1,17 @@
-var Comment = require("./public/models/comment");
-var Issue = require("./public/models/issue");
-var User = require("./public/models/user");
-const twitterModule = require("./twitter");
+var Comment = require('./public/models/comment');
+var Issue = require('./public/models/issue');
+var User = require('./public/models/user');
+const twitterModule = require('./twitter');
 
 // uploading a new issue
 function upload(req, res) {
+  // check if an image is uploaded
+  var image;
+  if (req.file) {
+    image = req.file.url;
+  } else {
+    image = '/src/img/test-image.jpg';
+  }
   // get the form data and refactor it to a standard issue format
   var issue = {
     title: req.body.title,
@@ -14,7 +21,8 @@ function upload(req, res) {
     upload: req.body.upload,
     category: req.body.category,
     votes: Math.floor(Math.random() * Math.floor(300)),
-    popularity: 0
+    popularity: 0,
+    image: image
   };
   // check the popularity using twitter
   twitterModule.checkPopularity(req.body.category).then(popularity => {
@@ -24,9 +32,9 @@ function upload(req, res) {
       if (err) {
         res.send(err);
       }
-      res.render("message", {
-        message: issue.title + " has been added",
-        redirect: "/"
+      res.render('message', {
+        message: issue.title + ' has been added',
+        redirect: '/'
       });
     });
   });
