@@ -1,6 +1,7 @@
-var Issue = require('./public/models/issue')
-var User = require('./public/models/user')
-const twitterModule = require('./twitter')
+var Comment = require("./public/models/comment");
+var Issue = require("./public/models/issue");
+var User = require("./public/models/user");
+const twitterModule = require("./twitter");
 
 // uploading a new issue
 function upload(req, res) {
@@ -14,53 +15,53 @@ function upload(req, res) {
     category: req.body.category,
     votes: Math.floor(Math.random() * Math.floor(300)),
     popularity: 0
-  }
+  };
   // check the popularity using twitter
   twitterModule.checkPopularity(req.body.category).then(popularity => {
-    issue.popularity = popularity
+    issue.popularity = popularity;
     // add the new issue to the database
     Issue.create(issue, function(err, newUser) {
       if (err) {
-        res.send(err)
+        res.send(err);
       }
-      res.render('message', {
-        message: issue.title + ' has been added',
-        redirect: '/'
-      })
-    })
-  })
+      res.render("message", {
+        message: issue.title + " has been added",
+        redirect: "/"
+      });
+    });
+  });
 }
 
 // datahandler to get details/all issues
 const handler = {
   // get a single issue
   getDetail: id => {
-    return Issue.findOne({ _id: id })
+    return Issue.findOne({ _id: id });
   },
   // get a single user
   getUser: id => {
-    return User.findOne({ _id: id })
+    return User.findOne({ _id: id });
   },
   // retrieve all issues
   getIssues: () => {
-    return Issue.find({})
+    return Issue.find({});
   },
   getIssuesForUser: id => {
-    return Issue.find({ owner: id })
+    return Issue.find({ owner: id });
   },
   deleteIssue: (issueId, ownerId) => {
-    return Issue.findOneAndRemove({ _id: issueId, owner: ownerId })
+    return Issue.findOneAndRemove({ _id: issueId, owner: ownerId });
   },
   addLike: (issueId, userId) => {
     return Issue.findOneAndUpdate(
       { _id: issueId, likes: { $ne: userId } },
       { $push: { likes: userId } }
-    )
+    );
   }
-}
+};
 
 // export functions to be used in server.js
 module.exports = {
   upload: upload,
   handler: handler
-}
+};
