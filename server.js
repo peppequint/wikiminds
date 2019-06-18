@@ -1,14 +1,37 @@
 const express = require('express')
 const mongoose = require('mongoose')
+var session = require('express-session')
 const bodyParser = require('body-parser')
 const authentication = require('./authentication')
 const data = require('./data')
-require('dotenv').config()
-
-var session = require('express-session')
 
 const app = express()
 const port = process.env.PORT || 3000
+
+const multer = require('multer')
+
+// images
+const cloudinary = require('cloudinary')
+const cloudinaryStorage = require('multer-storage-cloudinary')
+require('dotenv').config()
+
+// config for image upload
+// https://www.freecodecamp.org/news/how-to-allow-users-to-upload-images-with-node-express-mongoose-and-cloudinary-84cefbdff1d9/
+cloudinary.config({
+  cloud_name: process.env.CLOUD_name,
+  api_key: process.env.CLOUD_key,
+  api_secret: process.env.CLOUD_secret
+})
+
+// image parsing
+const storage = cloudinaryStorage({
+  cloudinary: cloudinary,
+  folder: 'demo',
+  allowedFormats: ['jpg', 'png'],
+  transformation: [{ width: 500, height: 500, crop: 'limit' }]
+})
+
+const parser = multer({ storage: storage })
 
 // initialize session
 app.use(
@@ -168,6 +191,6 @@ app.get('*', function(req, res) {
 // post routes for form submissions
 app.post('/register', authentication.register)
 app.post('/login', authentication.login)
-app.post('/newissue', data.upload)
+app.post('/newissue', parser.single('upload'), data.upload)
 
 app.listen(port, () => console.log(`Wikiminds listening on port ${port}!`))
