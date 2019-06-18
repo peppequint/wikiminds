@@ -1,16 +1,16 @@
-var Comment = require('./public/models/comment');
-var Issue = require('./public/models/issue');
-var User = require('./public/models/user');
-const twitterModule = require('./twitter');
+var Comment = require('./public/models/comment')
+var Issue = require('./public/models/issue')
+var User = require('./public/models/user')
+const twitterModule = require('./twitter')
 
 // uploading a new issue
 function upload(req, res) {
   // check if an image is uploaded
-  var image;
+  var image
   if (req.file) {
-    image = req.file.url;
+    image = req.file.url
   } else {
-    image = '/src/img/test-image.jpg';
+    image = '/src/img/test-image.jpg'
   }
   // get the form data and refactor it to a standard issue format
   var issue = {
@@ -23,73 +23,80 @@ function upload(req, res) {
     votes: Math.floor(Math.random() * Math.floor(300)),
     popularity: 0,
     image: image
-  };
+  }
   // check the popularity using twitter
   twitterModule.checkPopularity(req.body.category).then(popularity => {
-    issue.popularity = popularity;
+    issue.popularity = popularity
     // add the new issue to the database
     Issue.create(issue, function(err, newUser) {
       if (err) {
-        res.send(err);
+        res.send(err)
       }
       res.render('message', {
         message: issue.title + ' has been added',
         redirect: '/'
-      });
-    });
-  });
+      })
+    })
+  })
 }
 
 function comment(req, res) {
-  var comment = {
-    title: req.body.title,
-    owner: req.session.userId,
-    description: req.body.description,
-    category: req.body.category
-  };
-
-  Comment.create(comment, function(err, newUser) {
-    if (err) {
-      res.send(err);
+  if (req.session.userId) {
+    var comment = {
+      title: req.body.title,
+      owner: req.session.userId,
+      description: req.body.description,
+      category: req.body.category
     }
+
+    Comment.create(comment, function(err, newUser) {
+      if (err) {
+        res.send(err)
+      }
+      res.render('message', {
+        message: comment.title + ' has been added',
+        redirect: '/'
+      })
+    })
+  } else {
     res.render('message', {
-      message: comment.title + ' has been added',
+      message: 'You can only comment when logged in',
       redirect: '/'
-    });
-  });
+    })
+  }
 }
 
 // datahandler to get details/all issues
 const handler = {
   // get a single issue
   getDetail: id => {
-    return Issue.findOne({ _id: id });
+    return Issue.findOne({ _id: id })
   },
   // get a single user
   getUser: id => {
-    return User.findOne({ _id: id });
+    return User.findOne({ _id: id })
   },
   // retrieve all issues
   getIssues: () => {
-    return Issue.find({});
+    return Issue.find({})
   },
   getIssuesForUser: id => {
-    return Issue.find({ owner: id });
+    return Issue.find({ owner: id })
   },
   deleteIssue: (issueId, ownerId) => {
-    return Issue.findOneAndRemove({ _id: issueId, owner: ownerId });
+    return Issue.findOneAndRemove({ _id: issueId, owner: ownerId })
   },
   addLike: (issueId, userId) => {
     return Issue.findOneAndUpdate(
       { _id: issueId, likes: { $ne: userId } },
       { $push: { likes: userId } }
-    );
+    )
   }
-};
+}
 
 // export functions to be used in server.js
 module.exports = {
   upload: upload,
   handler: handler,
   comment: comment
-};
+}
