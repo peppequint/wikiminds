@@ -144,8 +144,7 @@ legend {
   padding: 0;
 }
 
-.l-header,
-.l-container {
+.wrapper {
   overflow-x: hidden;
 }
 
