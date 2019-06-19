@@ -47,6 +47,7 @@
 						})
 						}%>
 						<% console.log(comments)%>
+						<h2>Add issue</h2>
 						<% if(session.userId){ %>
 						<form class="m-form" action="/newcomment/<%=issue._id%>" method="post">
 							<label class="m-fieldset--label" for="title">Title</label>
