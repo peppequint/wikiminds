@@ -19,6 +19,11 @@ var CommentSchema = new mongoose.Schema({
     {
       type: String
     }
+  ],
+  dislikes: [
+    {
+      type: String
+    }
   ]
 })
 

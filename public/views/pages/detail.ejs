@@ -3,6 +3,7 @@
 	<head>
 		<% include ../partials/head %>
 	</head>
+	<% include ../partials/socket %>
 	<body>
 		<% include ../partials/header %>
 		<main class="l-container">
@@ -38,15 +39,18 @@
 							<span class="m-comment--title"><%= comment.title %></span>
 							<p class="m-comment--owner"><%= comment.owner %></p>
 							<div class="m-comment--likes">
+							<a href='/comment/<%= comment._id %>/upvote'>
 								<i class="material-icons md-18">add</i>
-								<span><%= comment.likes.length %></span>
+								</a>
+								<span><%= comment.likes.length - comment.dislikes.length %></span>
+								<a href='/comment/<%= comment._id %>/downvote'>
 								<i class="material-icons md-18">remove</i>
+								</a>
 							</div>
 						</article>
 						<%
 						})
 						}%>
-						<% console.log(comments)%>
 						<% if(session.userId){ %>
 						<form class="m-form" action="/newcomment/<%=issue._id%>" method="post">
 							<label class="m-fieldset--label" for="title">Title</label>

@@ -93,6 +93,18 @@ const handler = {
       { $push: { likes: userId } }
     )
   },
+  upvoteComment: (commentId, userId) => {
+    return Comment.findOneAndUpdate(
+      { _id: commentId, likes: { $ne: userId }, dislikes: { $ne: userId } },
+      { $push: { likes: userId } }
+    )
+  },
+  downvoteComment: (commentId, userId) => {
+    return Comment.findOneAndUpdate(
+      { _id: commentId, likes: { $ne: userId }, dislikes: { $ne: userId } },
+      { $push: { dislikes: userId } }
+    )
+  },
   getComments: issueId => {
     return Comment.find({ issue: issueId })
   }

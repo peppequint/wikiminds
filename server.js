@@ -105,6 +105,48 @@ app.get('/details/:id/like', (req, res) => {
   }
 })
 
+// upvote a comment
+app.get('/comment/:id/upvote', (req, res) => {
+  if (req.session.userId) {
+    data.handler
+      .upvoteComment(req.params.id, req.session.userId)
+      .then(comment => {
+        if (comment) {
+          res.redirect('back')
+        } else {
+          console.log('comment already upvoted')
+          res.redirect('back')
+        }
+      })
+  } else {
+    res.render('message', {
+      message: 'You need to be logged in to upvote a comment',
+      redirect: '/login'
+    })
+  }
+})
+
+// downvote a comment
+app.get('/comment/:id/downvote', (req, res) => {
+  if (req.session.userId) {
+    data.handler
+      .downvoteComment(req.params.id, req.session.userId)
+      .then(comment => {
+        if (comment) {
+          res.redirect('back')
+        } else {
+          console.log('comment already downvoted')
+          res.redirect('back')
+        }
+      })
+  } else {
+    res.render('message', {
+      message: 'You need to be logged in to downvote a comment',
+      redirect: '/login'
+    })
+  }
+})
+
 // delete issue
 app.get('/delete/:id', (req, res) => {
   if (req.session.userId) {
