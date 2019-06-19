@@ -4,74 +4,76 @@
 		<% include ../partials/head %>
 	</head>
 	<body>
-		<% include ../partials/header %>
-		<main class="l-container">
-			<section class="m-detail">
-				<header class="m-detail--header">
-					<img class="m-detail--image" src="<%=issue.image%>" alt="">
-					<h1><%= issue.title %></h1>
-					<span>Likes: <%= issue.likes.length %></span>
-					<span>Category: <%= issue.category%></span>
-					<p>Posted by:</p>
-					<a href='/users/<%=owner._id%>'><h3><%= owner.username %></h3></a>
-				</header>
-				<nav class="m-nav">
-					<ul class="m-nav--list">
-						<a href="#issue"><li class="m-list--item m-item--active">Issue</li></a>
-						<a href="#comment"><li class="m-list--item m-item--inactive">Comment</li></a>
-						<a href="#contribute"><li class="m-list--item m-item--inactive">Contribute</li></a>
-					</ul>
-				</nav>
-				<article class='m-information'>
-					<section class="m-detail--information m-detail--issue" id="issue">
-						<h1>section1</h1>	
-						<p class="m-information--paragraph"><%= issue.meta_description%></p>
-						<% if(session.userId && issue.owner && issue.owner === session.userId){%>
-						<a href="/edit/<%=issue._id%>">Edit this issue</a>
-						<a href="/delete/<%=issue._id%>">Delete this issue</a>
-						<% } %>
-					</section>
-					<section class="m-detail--information m-detail--comment" id="comment">
-					<% if(comments[0]){ %>
-						<% comments.forEach(comment => { %>
-						<article class="m-comment">
-							<span class="m-comment--title"><%= comment.title %></span>
-							<p class="m-comment--owner"><%= comment.owner %></p>
-							<div class="m-comment--likes">
-								<i class="material-icons md-18">add</i>
-								<span><%= comment.likes.length %></span>
-								<i class="material-icons md-18">remove</i>
-							</div>
-						</article>
-						<%
-						})
-						}%>
-						<% console.log(comments)%>
-						<h2>Add issue</h2>
-						<% if(session.userId){ %>
-						<form class="m-form" action="/newcomment/<%=issue._id%>" method="post">
-							<label class="m-fieldset--label" for="title">Title</label>
-							<input class="m-fieldset--input m-fieldset--text" id="title" type="text" name="title">
-							<label class="m-fieldset--label" for="meta_description">Solution</label>
-							<input class="m-fieldset--input m-fieldset--text" id="meta_description" type="text" name="meta_description">
-							<button class="m-fieldset--button" type="submit">Post</button>
-						</form>
-						<% } else {%>
-						<a href='/login'>Log in to leave a comment! </a>
-						<% } %>
-					</section>
-					<section class='m-detail--information m-detail--contribute' id="contribute">
-						<h1>section3</h1>
-						<p class="m-information--paragraph"><%= issue.meta_description%></p>
-						<% if(session.userId && issue.owner && issue.owner === session.userId){%>
-						<a href="/edit/<%=issue._id%>">Edit this issue</a>
-						<a href="/delete/<%=issue._id%>">Delete this issue</a>
-						<% } %>
-					</section>
-				</article>
-			</section>
-		</main>
-		<% include ../partials/footer %>
+		<div class="wrapper">
+			<% include ../partials/header %>
+			<main class="l-container">
+				<section class="m-detail">
+					<header class="m-detail--header">
+						<img class="m-detail--image" src="<%=issue.image%>" alt="">
+						<h1><%= issue.title %></h1>
+						<span>Likes: <%= issue.likes.length %></span>
+						<span>Category: <%= issue.category%></span>
+						<p>Posted by:</p>
+						<a href='/users/<%=owner._id%>'><h3><%= owner.username %></h3></a>
+					</header>
+					<nav class="m-nav">
+						<ul class="m-nav--list">
+							<a href="#issue"><li class="m-list--item m-item--active">Issue</li></a>
+							<a href="#comment"><li class="m-list--item m-item--inactive">Comment</li></a>
+							<a href="#contribute"><li class="m-list--item m-item--inactive">Contribute</li></a>
+						</ul>
+					</nav>
+					<article class='m-information'>
+						<section class="m-detail--information m-detail--issue" id="issue">
+							<h1>section1</h1>	
+							<p class="m-information--paragraph"><%= issue.meta_description%></p>
+							<% if(session.userId && issue.owner && issue.owner === session.userId){%>
+							<a href="/edit/<%=issue._id%>">Edit this issue</a>
+							<a href="/delete/<%=issue._id%>">Delete this issue</a>
+							<% } %>
+						</section>
+						<section class="m-detail--information m-detail--comment" id="comment">
+						<% if(comments[0]){ %>
+							<% comments.forEach(comment => { %>
+							<article class="m-comment">
+								<span class="m-comment--title"><%= comment.title %></span>
+								<p class="m-comment--owner"><%= comment.owner %></p>
+								<div class="m-comment--likes">
+									<i class="material-icons md-18">add</i>
+									<span><%= comment.likes.length %></span>
+									<i class="material-icons md-18">remove</i>
+								</div>
+							</article>
+							<%
+							})
+							}%>
+							<% console.log(comments)%>
+							<h2>Add issue</h2>
+							<% if(session.userId){ %>
+							<form class="m-form" action="/newcomment/<%=issue._id%>" method="post">
+								<label class="m-fieldset--label" for="title">Title</label>
+								<input class="m-fieldset--input m-fieldset--text" id="title" type="text" name="title">
+								<label class="m-fieldset--label" for="meta_description">Solution</label>
+								<input class="m-fieldset--input m-fieldset--text" id="meta_description" type="text" name="meta_description">
+								<button class="m-fieldset--button" type="submit">Post</button>
+							</form>
+							<% } else {%>
+							<a href='/login'>Log in to leave a comment! </a>
+							<% } %>
+						</section>
+						<section class='m-detail--information m-detail--contribute' id="contribute">
+							<h1>section3</h1>
+							<p class="m-information--paragraph"><%= issue.meta_description%></p>
+							<% if(session.userId && issue.owner && issue.owner === session.userId){%>
+							<a href="/edit/<%=issue._id%>">Edit this issue</a>
+							<a href="/delete/<%=issue._id%>">Delete this issue</a>
+							<% } %>
+						</section>
+					</article>
+				</section>
+			</main>
+			<% include ../partials/footer %>
+		</div>
 		<script type="text/javascript" src="./../../js/index.js"></script>
 	</body>
 </html>

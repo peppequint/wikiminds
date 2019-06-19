@@ -4,22 +4,24 @@
 		<% include ../partials/head %>
 	</head>
 	<body>
-		<% include ../partials/header %>
-		<main class="l-container">
-			<section class="m-section m-trending">
-				<h1 class="m-section--heading m-section--heading-red m-heading--xxl">Trending</h1>
-				<% data.forEach(function(issue){ %>
-					 <%- include('../partials/card', {issue: issue}); %>
-  				<% }); %>
-			</section>
-			<section class="m-section m-recommended">
-				<h1 class="m-section--heading m-section--heading-blue m-heading--xxl">Recommended</h1>
-				<% data.forEach(function(issue){ %>
-					 <%- include('../partials/card', {issue: issue}); %>
-  				<% }); %>
-			</section>
-		</main>
-		<% include ../partials/footer %>
+		<div class="wrapper">
+			<% include ../partials/header %>
+			<main class="l-container">
+				<section class="m-section m-trending">
+					<h1 class="m-section--heading m-section--heading-red m-heading--xxl">Trending</h1>
+					<% data.forEach(function(issue){ %>
+						<%- include('../partials/card', {issue: issue}); %>
+					<% }); %>
+				</section>
+				<section class="m-section m-recommended">
+					<h1 class="m-section--heading m-section--heading-blue m-heading--xxl">Recommended</h1>
+					<% data.forEach(function(issue){ %>
+						<%- include('../partials/card', {issue: issue}); %>
+					<% }); %>
+				</section>
+			</main>
+			<% include ../partials/footer %>
+		</div>
 		<script type="text/javascript" src="./../../js/index.js"></script>
 	</body>
 </html>

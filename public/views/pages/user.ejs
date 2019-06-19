@@ -4,32 +4,34 @@
         <% include ../partials/head%>
     </head>
     <body>
-        <% include ../partials/header%>
-        <main class="l-container">
-            <section class="m-section">
-                <h2><%= user.username%></h2>
-                <p>Full name:</p>
-                <p><%= user.first_name + ' ' + user.last_name%></p>
-                <p>City:</p>
-                <p><%= user.city%></p>
-                <p>Skills:</p>
-                <p><%= user.skills%></p>
-                <h2>Issues added by this user:</h2>
-                <% if(issues[0]){
-                    issues.forEach(issue => {
-                        %>
-                        <h2><%= issue.title %> </h2> 
-                        <p><%= issue.category %> </p> 
-                        <p><%= issue.votes %> </p> 
-                        <a href='/details/<%=issue._id%>'>Link</a>
-                        <%
-                    })
-                    
-                 } else {
-                     %><p>This user has not made any issues yet </p><%
-                 } %>
-                <a href="#"><button type="submit">Contact this user</button></a>
-            </section>    
-        </main>
+        <div class="wrapper">
+            <% include ../partials/header%>
+            <main class="l-container">
+                <section class="m-section">
+                    <h2><%= user.username%></h2>
+                    <p>Full name:</p>
+                    <p><%= user.first_name + ' ' + user.last_name%></p>
+                    <p>City:</p>
+                    <p><%= user.city%></p>
+                    <p>Skills:</p>
+                    <p><%= user.skills%></p>
+                    <h2>Issues added by this user:</h2>
+                    <% if(issues[0]){
+                        issues.forEach(issue => {
+                            %>
+                            <h2><%= issue.title %> </h2> 
+                            <p><%= issue.category %> </p> 
+                            <p><%= issue.votes %> </p> 
+                            <a href='/details/<%=issue._id%>'>Link</a>
+                            <%
+                        })
+                        
+                    } else {
+                        %><p>This user has not made any issues yet </p><%
+                    } %>
+                    <a href="#"><button type="submit">Contact this user</button></a>
+                </section>    
+            </main>
+        </div>
     </body>
 </html>
