@@ -145,7 +145,8 @@ legend {
 }
 
 .wrapper {
-  overflow-x: hidden;
+  overflow: hidden auto;
+  position: relative;
 }
 
 /* base icons */
