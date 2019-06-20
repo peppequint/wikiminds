@@ -492,7 +492,10 @@ legend {
 
 .m-comment--title {
   font-weight: 700;
-  text-transform: capitalize;
+}
+
+.m-comment--title::first-letter {
+  text-transform: uppercase;
 }
 
 .m-comment--likes {
