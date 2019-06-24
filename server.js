@@ -67,7 +67,9 @@ app.set('views', './public/views/pages')
 
 // home route
 app.get('/', (req, res) =>
-  data.handler.getIssues().then(issues => res.render('index', { data: issues }))
+  data.handler.getIssues().then(issues => {
+    res.render('index', { data: issues })
+  })
 )
 
 // detail page route
@@ -197,7 +199,9 @@ app.get('/users/:id', (req, res) => {
 app.get('/register', (req, res) => res.render('register'))
 
 // login
-app.get('/login', (req, res) => res.render('login'))
+app.get('/login', (req, res) => {
+  res.render('login')
+})
 
 // on logout
 app.get('/logout', function(req, res, next) {

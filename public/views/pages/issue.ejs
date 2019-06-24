@@ -8,7 +8,7 @@
             <% include ../partials/header%>
             <main class="l-container">
                 <section class="m-section">
-                    <form class="m-form" action="/newissue" method="post" enctype="multipart/form-data">
+                    <form class="m-form" action="/newissue" method="post" enctype="multipart/form-data"  onSubmit="document.getElementById('submit').disabled=true;">
                         <legend class="m-section--heading m-section--heading-green m-heading--xxl">Create issue</legend>
                         <label class="m-fieldset--label" for="title">Title</label>
                         <input class="m-fieldset--input m-fieldset--text" id="title" type="text" name="title">
@@ -44,10 +44,11 @@
                                 <input class="m-fieldset--input" id="pollution" value="pollution" type="radio" name="category">
                             </label>
                         </div>
-                        <button class="m-fieldset--button" type="submit">Post</button>
+                        <button class="m-fieldset--button" type="submit" id='submit'>Post</button>
                     </form>
                 </section>
             </main>
         </div>
+        <script type="text/javascript" src="./../../js/index.js"></script>
     </body>
 </html>
