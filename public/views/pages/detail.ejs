@@ -41,7 +41,8 @@
 							<% comments.forEach(comment => { %>
 							<article class="m-comment">
 								<span class="m-comment--title"><%= comment.title %></span>
-								<p class="m-comment--owner"><%= comment.owner %></p>
+								<p class="m-comment--content"><%= comment.meta_description %></p>
+								<p class="m-comment--owner">Posted by <a href='/users/<%=comment.owner%>'><%= comment.owner_name %></a></p>
 								<div class="m-comment--likes">
 										<a href='/comment/<%= comment._id %>/upvote'>
 								<i class="material-icons md-18">add</i>
@@ -58,12 +59,14 @@
 							<% console.log(comments)%>
 							<h2>Add issue</h2>
 							<% if(session.userId){ %>
-							<form class="m-form" action="/newcomment/<%=issue._id%>" method="post">
+							<form class="m-form" action="/newcomment/<%=issue._id%>" method="post" onSubmit="document.getElementById('submit').disabled=true;">
 								<label class="m-fieldset--label" for="title">Title</label>
 								<input class="m-fieldset--input m-fieldset--text" id="title" type="text" name="title" required>
 								<label class="m-fieldset--label" for="meta_description">Solution</label>
 								<input class="m-fieldset--input m-fieldset--text" id="meta_description" type="text" name="meta_description" required>
 								<button class="m-fieldset--button" type="submit">Post</button>
+								<input class="m-fieldset--input m-fieldset--text" id="meta_description" type="text" name="meta_description">
+								<button class="m-fieldset--button" type="submit" id='submit'>Post</button>
 							</form>
 							<% } else {%>
 							<a href='/login'>Log in to leave a comment! </a>
