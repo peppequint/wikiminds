@@ -13,6 +13,9 @@ var IssueSchema = new mongoose.Schema({
   meta_description: {
     type: String
   },
+  description: {
+    type: String
+  },
   upload: {
     type: String
   },

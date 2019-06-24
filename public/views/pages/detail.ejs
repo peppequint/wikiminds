@@ -26,8 +26,11 @@
 					</nav>
 					<article class='m-information'>
 						<section class="m-detail--information m-detail--issue" id="issue">
-							<h1>section1</h1>	
+							<h1>Summary</h1>
+							<h2>Meta description</h2>	
 							<p class="m-information--paragraph"><%= issue.meta_description%></p>
+							<h2>Full description</h2>	
+							<p class="m-information--paragraph"><%= issue.description%></p>
 							<% if(session.userId && issue.owner && issue.owner === session.userId){%>
 							<a href="/edit/<%=issue._id%>">Edit this issue</a>
 							<a href="/delete/<%=issue._id%>">Delete this issue</a>
