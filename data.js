@@ -42,21 +42,26 @@ function upload(req, res) {
 
 function comment(req, res) {
   if (req.session.userId) {
-    var comment = {
-      issue: req.params.id,
-      title: req.body.title,
-      owner: req.session.userId,
-      meta_description: req.body.meta_description,
-      category: req.body.category
-    }
+    handler.getUser(req.session.userId).then(user => {
+      console.log(user)
 
-    Comment.create(comment, function(err, newUser) {
-      if (err) {
-        res.send(err)
+      var comment = {
+        issue: req.params.id,
+        title: req.body.title,
+        owner: user._id,
+        owner_name: user.username,
+        meta_description: req.body.meta_description,
+        category: req.body.category
       }
-      res.render('message', {
-        message: comment.title + ' has been added',
-        redirect: '/details/' + req.params.id + '#comment'
+
+      Comment.create(comment, function(err, newUser) {
+        if (err) {
+          res.send(err)
+        }
+        res.render('message', {
+          message: comment.title + ' has been added',
+          redirect: '/details/' + req.params.id + '#comment'
+        })
       })
     })
   } else {

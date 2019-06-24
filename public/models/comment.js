@@ -12,6 +12,9 @@ var CommentSchema = new mongoose.Schema({
     type: String,
     trim: true
   },
+  owner_name: {
+    type: String
+  },
   meta_description: {
     type: String
   },

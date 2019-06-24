@@ -41,7 +41,8 @@
 							<% comments.forEach(comment => { %>
 							<article class="m-comment">
 								<span class="m-comment--title"><%= comment.title %></span>
-								<p class="m-comment--owner"><%= comment.owner %></p>
+								<p class="m-comment--content"><%= comment.meta_description %></p>
+								<p class="m-comment--owner">Posted by <a href='/users/<%=comment.owner%>'><%= comment.owner_name %></a></p>
 								<div class="m-comment--likes">
 										<a href='/comment/<%= comment._id %>/upvote'>
 								<i class="material-icons md-18">add</i>
