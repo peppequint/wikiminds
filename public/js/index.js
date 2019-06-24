@@ -2,6 +2,8 @@
 
 console.log("index.js");
 
+const body = document.querySelector("body");
+
 const navList = document.querySelector(".m-nav--list");
 let navItem = document.querySelectorAll(".m-list--item");
 
@@ -16,4 +18,15 @@ for (let i = 0; i < navItem.length; i++) {
     );
     this.className += "m-list--item m-item--active";
   });
+}
+
+function overflowBody() {
+  const checkBox = document.querySelector(".m-nav--check");
+  if (checkBox.checked == true) {
+    body.classList.toggle("l-frozen");
+    console.log("Body frozen");
+  } else {
+    console.log("body not forzen");
+    body.classList.toggle("l-frozen");
+  }
 }

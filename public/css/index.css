@@ -170,6 +170,9 @@ legend {
   color: var(--color-body-font);
 }
 
+.l-frozen {
+  overflow: hidden;
+}
 /* layout header */
 .l-header {
   align-items: center;
