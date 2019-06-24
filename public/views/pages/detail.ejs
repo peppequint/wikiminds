@@ -60,9 +60,9 @@
 							<% if(session.userId){ %>
 							<form class="m-form" action="/newcomment/<%=issue._id%>" method="post">
 								<label class="m-fieldset--label" for="title">Title</label>
-								<input class="m-fieldset--input m-fieldset--text" id="title" type="text" name="title">
+								<input class="m-fieldset--input m-fieldset--text" id="title" type="text" name="title" required>
 								<label class="m-fieldset--label" for="meta_description">Solution</label>
-								<input class="m-fieldset--input m-fieldset--text" id="meta_description" type="text" name="meta_description">
+								<input class="m-fieldset--input m-fieldset--text" id="meta_description" type="text" name="meta_description" required>
 								<button class="m-fieldset--button" type="submit">Post</button>
 							</form>
 							<% } else {%>

@@ -11,11 +11,11 @@
                     <form class="m-form" action="/newissue" method="post" enctype="multipart/form-data">
                         <legend class="m-section--heading m-section--heading-green m-heading--xxl">Create issue</legend>
                         <label class="m-fieldset--label" for="title">Title</label>
-                        <input class="m-fieldset--input m-fieldset--text" id="title" type="text" name="title">
+                        <input class="m-fieldset--input m-fieldset--text" id="title" type="text" name="title" required>
                         <label class="m-fieldset--label" for="meta-description">Meta description</label>
-                        <input class="m-fieldset--input m-fieldset--text" id="meta-description" type="text" name="meta_description">
+                        <input class="m-fieldset--input m-fieldset--text" id="meta-description" type="text" name="meta_description" required>
                         <label class="m-fieldset--label" for="description">Description</label>
-                        <textarea class="m-fieldset--input m-fieldset--text" rows="5" maxlength="250" type="text" name="description" wrap="hard" id="description"></textarea>
+                        <textarea class="m-fieldset--input m-fieldset--text" rows="5" maxlength="250" type="text" name="description" wrap="hard" id="description" required></textarea>
                         <label class="m-fieldset--label" for="upload">Upload</label>
                         <div class="m-fieldset--upload">
                             <i class="material-icons md-36">add_photo_alternate</i>
