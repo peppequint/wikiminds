@@ -2,8 +2,8 @@
 <html lang="en" dir="ltr">
 	<head>
 		<% include ../partials/head %>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	</head>
-	<% include ../partials/socket %>
 	<body>
 		<div class="wrapper">
 			<% include ../partials/header %>
@@ -44,29 +44,30 @@
 								<p class="m-comment--content"><%= comment.meta_description %></p>
 								<p class="m-comment--owner">Posted by <a href='/users/<%=comment.owner%>'><%= comment.owner_name %></a></p>
 								<div class="m-comment--likes">
-										<a href='/comment/<%= comment._id %>/upvote'>
+								<% if(session.userId){ %>
+								<button onclick="upvote('<%=comment._id%>', '<%=session.userId%>')">
 								<i class="material-icons md-18">add</i>
-								</a>
-								<span><%= comment.likes.length - comment.dislikes.length %></span>
-								<a href='/comment/<%= comment._id %>/downvote'>
-								<i class="material-icons md-18">remove</i>
-								</a>
+								</button>
+								<% } %>
+								<span id='<%=comment._id%>'><%= comment.likes.length - comment.dislikes.length %></span>
+								<% if(session.userId){ %>
+								<button onclick="downvote('<%=comment._id%>', '<%=session.userId%>')">
+								<i id='downvote' class="material-icons md-18">remove</i>
+								</button>
+								<% } %>
 								</div>
 							</article>
 							<%
 							})
 							}%>
-							<% console.log(comments)%>
 							<h2>Add issue</h2>
 							<% if(session.userId){ %>
-							<form class="m-form" action="/newcomment/<%=issue._id%>" method="post" onSubmit="document.getElementById('submit').disabled=true;">
+							<form id="form" class="m-form" action="/newcomment/<%=issue._id%>" method="post">
 								<label class="m-fieldset--label" for="title">Title</label>
 								<input class="m-fieldset--input m-fieldset--text" id="title" type="text" name="title" required>
 								<label class="m-fieldset--label" for="meta_description">Solution</label>
 								<input class="m-fieldset--input m-fieldset--text" id="meta_description" type="text" name="meta_description" required>
 								<button class="m-fieldset--button" type="submit">Post</button>
-								<input class="m-fieldset--input m-fieldset--text" id="meta_description" type="text" name="meta_description">
-								<button class="m-fieldset--button" type="submit" id='submit'>Post</button>
 							</form>
 							<% } else {%>
 							<a href='/login'>Log in to leave a comment! </a>
@@ -86,5 +87,6 @@
 			<% include ../partials/footer %>
 		</div>
 		<script type="text/javascript" src="./../../js/index.js"></script>
+<% include ../partials/socket %>
 	</body>
 </html>

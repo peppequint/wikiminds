@@ -5,7 +5,6 @@ var CommentSchema = new mongoose.Schema({
   },
   title: {
     type: String,
-    required: true,
     trim: true
   },
   owner: {

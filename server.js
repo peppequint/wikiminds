@@ -5,7 +5,13 @@ const bodyParser = require('body-parser')
 const authentication = require('./authentication')
 const data = require('./data')
 
+const http = require('http')
+
 const app = express()
+
+var server = http.createServer(app)
+
+var io = require('socket.io').listen(server)
 const port = process.env.PORT || 3000
 
 const multer = require('multer')
@@ -107,7 +113,7 @@ app.get('/details/:id/like', (req, res) => {
   }
 })
 
-// upvote a comment
+// fallback to upvote a comment when javascript is disabled
 app.get('/comment/:id/upvote', (req, res) => {
   if (req.session.userId) {
     data.handler
@@ -128,7 +134,7 @@ app.get('/comment/:id/upvote', (req, res) => {
   }
 })
 
-// downvote a comment
+// fallback to downvote a comment when javascript is disabled
 app.get('/comment/:id/downvote', (req, res) => {
   if (req.session.userId) {
     data.handler
@@ -242,4 +248,35 @@ app.post('/login', authentication.login)
 app.post('/newissue', parser.single('upload'), data.upload)
 app.post('/newcomment/:id', data.comment)
 
-app.listen(port, () => console.log(`Wikiminds listening on port ${port}!`))
+// socket.io for upvoting / downvoting
+
+io.on('connection', function(socket) {
+  console.log('User connected to socket')
+  // upvote
+  socket.on('upvote', function(upvote) {
+    data.handler.upvoteComment(upvote.id, upvote.userId).then(comment => {
+      if (comment) {
+        console.log(comment.title + ' upvoted')
+        socket.emit('upvote', { success: true, comment: comment._id })
+      } else {
+        console.log('comment already upvoted')
+        socket.emit('upvote', { success: false, comment: upvote.id })
+      }
+    })
+  })
+  // downvote
+  socket.on('downvote', function(downvote) {
+    console.log('downvote ' + downvote.id)
+    data.handler.downvoteComment(downvote.id, downvote.userId).then(comment => {
+      if (comment) {
+        console.log(comment.title + ' downvoted')
+        socket.emit('downvote', { success: true, comment: comment._id })
+      } else {
+        console.log('comment already upvoted')
+        socket.emit('downvote', { success: false, comment: downvote.id })
+      }
+    })
+  })
+})
+
+server.listen(port, () => console.log(`Wikiminds listening on port ${port}!`))
