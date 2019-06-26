@@ -7,28 +7,32 @@
         <% include ../partials/header%>
         <main class="l-container">
             <section class="m-section">
-                <h2><%= user.username%></h2>
-                <p>Full name:</p>
-                <p><%= user.first_name + ' ' + user.last_name%></p>
-                <p>City:</p>
-                <p><%= user.city%></p>
-                <p>Skills:</p>
-                <p><%= user.skills%></p>
-                <h2>Issues:</h2>
-                <% if(issues[0]){
-                    issues.forEach(issue => {
-                        %>
-                        <h2><%= issue.title %> </h2> 
-                        <p><%= issue.category %> </p> 
-                        <p><%= issue.votes %> </p> 
-                        <a href='/details/<%=issue._id%>'>Link</a>
-                        <%
-                    })
-                    
-                 } else {
-                     %><a href='/issue'>You haven't made any issues yet, click here to make one</a><%
-                 } %>
-                <a href="/logout"><button type="submit">Logout</button></a>
+                <article class="m-profile--details">
+                    <h1 class="m-section--heading m-section--heading-grey-light">Profile</h1>
+                    <p class="m-details--label">Full name:</p>
+                    <p class="m-details--data"><%= user.first_name + ' ' + user.last_name%></p>
+                    <p class="m-details--label">City:</p>
+                    <p class="m-details--data"><%= user.city%></p>
+                    <p class="m-details--label">Skills:</p>
+                    <p class="m-details--data"><%= user.skills%></p>  
+                </article>
+                <article class="m-profile--issues">
+                    <h1 class="m-section--heading m-section--heading-black">Issues:</h1>
+                    <% if(issues[0]){
+                        issues.forEach(issue => {
+                            %>
+                            <h2><%= issue.title %> </h2> 
+                            <p><%= issue.category %> </p> 
+                            <p><%= issue.votes %> </p> 
+                            <a href='/details/<%=issue._id%>'>Link</a>
+                            <%
+                        })
+                        
+                    } else {
+                        %><a class="m-profile--create" href='/issue'>Create issue</a><%
+                    } %>
+                    <a class="m-account--button" href="/logout"><button type="submit">Logout</button></a>
+                </article>
             </section>    
         </main>
     </body>
