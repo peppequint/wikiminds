@@ -25,6 +25,7 @@ h5 {
 }
 
 h1,
+legend,
 .m-heading--xxl {
   font-size: 1.75rem;
   font-weight: 400;
@@ -37,7 +38,6 @@ h2,
 }
 
 h3,
-legend,
 .m-heading--lg {
   font-size: 1.25rem;
   font-weight: 700;

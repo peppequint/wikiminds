@@ -1,0 +1,26 @@
+.m-profile--details {
+  margin-bottom: 1rem;
+}
+
+.m-details--label {
+  font-size: 1.1rem;
+}
+
+.m-details--data {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.m-profile--issues {
+  display: flex;
+  flex-direction: column;
+}
+
+.m-profile--create {
+  background: var(--color-black);
+  border: 2px solid var(--color-black);
+  color: var(--color-grey-blue);
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
