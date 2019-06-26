@@ -30,6 +30,18 @@
   background: var(--color-green);
 }
 
+.m-section--heading-yellow::before {
+  background: var(--color-yellow);
+}
+
+.m-section--heading-black::before {
+  background: var(--color-black);
+}
+
+.m-section--heading-grey-light::before {
+  background: var(--color-grey-light);
+}
+
 .m-card:hover {
   transform: scale(1.015);
 }
