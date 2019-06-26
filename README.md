@@ -53,7 +53,7 @@ People partaking in Wikiminds projects should be proud of their achievements on 
 - Vote on issues
 - Vote on solutions
 - Bring solutions and issues together
-- View the progress of Wikiminds projects 
+- View the progress of Wikiminds projects
 - Ability for people to contribute their practical skills / knowledge
 
 ## Data
@@ -95,7 +95,7 @@ Right now the following entities are present in the database:
 
 ![datamodel](./datamodel.png)
 
-We are using a mongoDB database, using the mongoose Node.js middleware and uploading the data to mlab. 
+We are using a mongoDB database, using the mongoose Node.js middleware and uploading the data to mlab.
 
 Images are being uploaded to and hosted on cloudinary.
 
@@ -127,6 +127,9 @@ Here the user can also pick a category which determines the Twitter relevance fo
 
 After posting an issue the user will be redirected to the issue's detail page.
 
+### Deleting an issue
+
+If a user is logged in and viewing their own issue, they can decide to remove that issue.
 
 ### Adding a comment to an issue
 
@@ -150,7 +153,7 @@ By up- or downvoting a comment you show your opinion on the validity of a commen
 
 When logged in you can press the profile icon in the top right corner to view your profile. This will show you your details and the issues you have posted.
 
-### Viewing a profile
+### Viewing someone else's profile
 
 When viewing an issue you can also click on the user displayed on the issue page. This will show you the profile of the user that posted the issue, and any other issues they may have posted.
 
@@ -159,3 +162,12 @@ Here you can also see more details about that particular user.
 ## Real time upvoting
 
 If a user has Javascript enabled (which most users do) the up and downvoting of comments will be done via sockets. This way the user gets instant feedback on their actions. Without Javascript enabled the application will fall back to a simpler approach to update the database, this will however refresh the page.
+
+## Wishlist
+
+Below are the things we would have liked to add when given more time.
+
+- Real time comments using sockets
+- Editing profile and issues
+- Admin privileges for certain users
+-
