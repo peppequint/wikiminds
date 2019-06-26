@@ -14,7 +14,7 @@ socket.on('upvote', function(report) {
   if (report.success) {
     commentScore.innerHTML = parseInt(commentScore.innerHTML) + 1
   } else if (!report.success) {
-    alert('You already upvoted this comment')
+    alert('You already voted on this comment')
   }
 })
 
@@ -28,7 +28,7 @@ socket.on('downvote', function(report) {
   if (report.success) {
     commentScore.innerHTML = parseInt(commentScore.innerHTML) - 1
   } else if (!report.success) {
-    alert('You already downvoted this comment')
+    alert('You already voted on this comment')
   }
 })
 
