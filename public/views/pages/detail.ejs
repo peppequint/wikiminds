@@ -46,12 +46,14 @@
 								<div class="m-comment--likes">
 								<% if(session.userId){ %>
 								<button onclick="upvote('<%=comment._id%>', '<%=session.userId%>')">
+								<noscript><a href='/comment/<%= comment._id %>/upvote'></noscript>
 								<i class="material-icons md-18">add</i>
 								</button>
 								<% } %>
 								<span id='<%=comment._id%>'><%= comment.likes.length - comment.dislikes.length %></span>
 								<% if(session.userId){ %>
 								<button onclick="downvote('<%=comment._id%>', '<%=session.userId%>')">
+								<noscript><a href='/comment/<%= comment._id %>/upvote'></noscript>
 								<i id='downvote' class="material-icons md-18">remove</i>
 								</button>
 								<% } %>
