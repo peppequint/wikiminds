@@ -25,7 +25,7 @@
 						</ul>
 					</nav>
 					<article class='m-information'>
-						<section class="m-detail--information m-detail--issue" id="issue">
+						<section class="m-information--detail m-issue--detail" id="issue">
 							<h1>Summary</h1>
 							<h2>Meta description</h2>	
 							<p class="m-information--paragraph"><%= issue.meta_description%></p>
@@ -36,7 +36,7 @@
 							<a href="/delete/<%=issue._id%>">Delete this issue</a>
 							<% } %>
 						</section>
-						<section class="m-detail--information m-detail--comment" id="comment">
+						<section class="m-information--detail m-comment--detail" id="comment">
 						<% if(comments[0]){ %>
 							<% comments.forEach(comment => { %>
 							<article class="m-comment">
@@ -73,7 +73,7 @@
 							<a href='/login'>Log in to leave a comment! </a>
 							<% } %>
 						</section>
-						<section class='m-detail--information m-detail--contribute' id="contribute">
+						<section class='m-information--detail m-contribute--detail' id="contribute">
 							<h1>section3</h1>
 							<p class="m-information--paragraph"><%= issue.meta_description%></p>
 							<% if(session.userId && issue.owner && issue.owner === session.userId){%>

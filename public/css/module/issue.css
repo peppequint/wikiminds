@@ -1,0 +1,92 @@
+.m-detail--header {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.m-detail--header :not(img) {
+  color: var(--color-grey-blue);
+  z-index: 10;
+}
+
+.m-detail--header:after {
+  background: rgba(0, 0, 0, 0.45);
+  content: "\A";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.m-detail--image {
+  height: 100%;
+  object-fit: cover;
+  object-position: 30%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.m-information {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+.m-information--detail {
+  flex: 0 0 100%;
+  padding: 0.75rem 1rem 2rem;
+  width: 100%;
+}
+
+.m-nav {
+  padding: 0.75rem 1rem;
+}
+
+.m-nav--list {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.m-list--item {
+  cursor: pointer;
+  font-weight: bold;
+  position: relative;
+}
+
+.m-list--item::before {
+  background: var(--color-black);
+  bottom: -3px;
+  content: "";
+  height: 0.2rem;
+  left: 0;
+  position: absolute;
+  transition: 0.2s ease-in;
+  width: 0%;
+}
+
+.m-list--item:hover::before {
+  width: 50%;
+}
+
+.m-item--active {
+  position: relative;
+}
+
+.m-item--active::before {
+  background: var(--color-black);
+  bottom: -3px;
+  content: "";
+  height: 0.2rem;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
