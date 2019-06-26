@@ -14,6 +14,25 @@
 - [Table of contents](#Table-of-contents)
 - [Install](#Install)
 - [Concept](#Concept)
+- [Core functionalities](#Core-functionalities)
+- [Tech Stack](#Tech-Stack)
+- [Data](#Data)
+	- [Issue](#Issue)
+	- [User](#User)
+	- [Comment](#Comment)
+- [Interactions](#Interactions)
+	- [Registering an account](#Registering-an-account)
+	- [Logging in](#Logging-in)
+	- [Adding an issue](#Adding-an-issue)
+	- [Deleting an issue](#Deleting-an-issue)
+	- [Adding a comment to an issue](#Adding-a-comment-to-an-issue)
+	- [Liking an issue](#Liking-an-issue)
+	- [Up- or downvoting a comment](#Up--or-downvoting-a-comment)
+	- [Viewing your profile](#Viewing-your-profile)
+	- [Viewing your favorites](#Viewing-your-favorites)
+	- [Viewing someone else's profile](#Viewing-someone-elses-profile)
+- [Real time upvoting using sockets](#Real-time-upvoting-using-sockets)
+- [Wishlist](#Wishlist)
 
 ## Install
 
@@ -55,6 +74,13 @@ People partaking in Wikiminds projects should be proud of their achievements on 
 - Bring solutions and issues together
 - View the progress of Wikiminds projects
 - Ability for people to contribute their practical skills / knowledge
+
+## Tech Stack
+
+- Node.js
+- EJS templating
+- MongoDB (mongoose/mlab)
+- Socket.io
 
 ## Data
 
@@ -149,9 +175,19 @@ Comments can be up- or downvoted by pressing the `+` or `-` symbol around the to
 
 By up- or downvoting a comment you show your opinion on the validity of a comment.
 
+Up or downvoting can be done in two ways by the application.
+
+If the user has Javascript enabled the platform will make use of sockets and notify the user in real time about their action (either the number of upvotes changes or a message box is shown containing an error).
+
+If the user is not using a Javascript compatible device a regular GET route will be used for the up- or downvoting of a comment. The downside to this is that the page will have to reload which is worse for the application flow.
+
 ### Viewing your profile
 
 When logged in you can press the profile icon in the top right corner to view your profile. This will show you your details and the issues you have posted.
+
+### Viewing your favorites
+
+Nagivate to the favorites tab in the menu when logged in to view your favorites. This is also the place to delete issues from your favorites.
 
 ### Viewing someone else's profile
 
@@ -159,7 +195,7 @@ When viewing an issue you can also click on the user displayed on the issue page
 
 Here you can also see more details about that particular user.
 
-## Real time upvoting
+## Real time upvoting using sockets
 
 If a user has Javascript enabled (which most users do) the up and downvoting of comments will be done via sockets. This way the user gets instant feedback on their actions. Without Javascript enabled the application will fall back to a simpler approach to update the database, this will however refresh the page.
 
@@ -170,4 +206,4 @@ Below are the things we would have liked to add when given more time.
 - Real time comments using sockets
 - Editing profile and issues
 - Admin privileges for certain users
--
+- Deleting/changing your vote on comments
