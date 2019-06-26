@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<% include ../partials/head %>
+	</head>
+	<body>
+		<div class="wrapper">
+			<% include ../partials/header %>
+			<main class="l-container">
+				<section class="m-section m-recommended">
+					<h1 class="m-section--heading m-section--heading-blue m-heading--xxl">Your favorites</h1>
+						<% 
+						// sort by amount of favorites
+						var byLikes = data.slice(0);
+						byLikes.sort(function(a,b) {
+    					return b.likes.length - a.likes.length;
+					});%>
+					<% byLikes.forEach(function(issue){ %>
+						<%- include('../partials/card', {issue: issue}); %>
+					<% }); %>
+				</section>
+			</main>
+			<% include ../partials/footer %>
+		</div>
+		<script type="text/javascript" src="./../../js/index.js"></script>
+	</body>
+</html>

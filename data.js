@@ -86,30 +86,40 @@ const handler = {
   getIssues: () => {
     return Issue.find({})
   },
+  // retrieve issues posted by certain user
   getIssuesForUser: id => {
     return Issue.find({ owner: id })
   },
+  // get favorites for a user
+  getFavorites: id => {
+    return Issue.find({ likes: { $in: [id] } })
+  },
+  // delete an issue
   deleteIssue: (issueId, ownerId) => {
     return Issue.findOneAndRemove({ _id: issueId, owner: ownerId })
   },
+  // like an issue
   addLike: (issueId, userId) => {
     return Issue.findOneAndUpdate(
       { _id: issueId, likes: { $ne: userId } },
       { $push: { likes: userId } }
     )
   },
+  // upvote a comment
   upvoteComment: (commentId, userId) => {
     return Comment.findOneAndUpdate(
       { _id: commentId, likes: { $ne: userId }, dislikes: { $ne: userId } },
       { $push: { likes: userId } }
     )
   },
+  // downvote a comment
   downvoteComment: (commentId, userId) => {
     return Comment.findOneAndUpdate(
       { _id: commentId, likes: { $ne: userId }, dislikes: { $ne: userId } },
       { $push: { dislikes: userId } }
     )
   },
+  // get comments for a issue
   getComments: issueId => {
     return Comment.find({ issue: issueId })
   }

@@ -201,6 +201,17 @@ app.get('/users/:id', (req, res) => {
   })
 })
 
+// get favorites for user
+app.get('/favorites', (req, res) => {
+  if (req.session.userId) {
+    data.handler.getFavorites(req.session.userId).then(favorites => {
+      res.render('favorites', { data: favorites })
+    })
+  } else {
+    res.redirect('/login')
+  }
+})
+
 // register
 app.get('/register', (req, res) => res.render('register'))
 
