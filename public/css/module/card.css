@@ -27,6 +27,7 @@
 .m-card--icon-arrow {
   align-items: center;
   background-color: var(--color-grey-blue);
+  border: 2px solid var(--color-black);
   bottom: 0;
   color: var(--color-black);
   display: flex;
