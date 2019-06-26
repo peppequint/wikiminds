@@ -1,0 +1,30 @@
+.l-header {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 0.75rem 1rem;
+}
+
+.m-header--link {
+  margin-right: auto;
+}
+
+.m-header--link:nth-child(2) {
+  align-items: center;
+  display: flex;
+  margin: 0 0 auto;
+}
+
+.m-header--logo {
+  color: var(--color-body-font);
+  font-family: var(--font-secondary);
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-right: auto;
+  text-transform: uppercase;
+}
+
+.m-header--icon:first-of-type {
+  margin-right: 0.5rem;
+}

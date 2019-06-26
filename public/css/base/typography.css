@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css?family=Exo:400,500,700,800|Noto+Sans:400,700&display=swap");
+
+:root {
+  --font-primary: "Noto Sans", sans-serif;
+  --font-secondary: "Exo", sans-serif;
+}
+
+body {
+  background-color: var(--color-grey-blue);
+  font-family: var(--font-primary);
+  font-size: 15px;
+  letter-spacing: 1px;
+  line-height: 1.75;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--color-body-heading);
+  font-family: var(--font-secondary);
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+h1,
+.m-heading--xxl {
+  font-size: 1.75rem;
+  font-weight: 400;
+}
+
+h2,
+.m-heading--xl {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+h3,
+legend,
+.m-heading--lg {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+h4,
+label,
+.m-heading--md {
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+h5,
+.m-heading--sm {
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+p {
+  font-family: var(--font-primary);
+  margin: 0;
+}
+
+button {
+  font-family: var(--font-secondary);
+  letter-spacing: 1px;
+}

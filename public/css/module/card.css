@@ -1,0 +1,90 @@
+.m-card {
+  background-color: #fbfbfb;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  position: relative;
+  transition: 0.2s ease-in;
+}
+
+.m-card--icon {
+  cursor: pointer;
+  font-size: 0.9rem;
+  height: 3rem;
+  padding: 0;
+  position: absolute;
+  width: 3rem;
+}
+
+.m-card--icon-star {
+  background-color: var(--color-yellow);
+  right: 0;
+  top: 0;
+}
+
+.m-card--icon-arrow {
+  align-items: center;
+  background-color: var(--color-grey-blue);
+  bottom: 0;
+  color: var(--color-black);
+  display: flex;
+  flex-direction: row;
+  font-weight: 700;
+  justify-content: flex-end;
+  padding: 0 0.75rem;
+  right: 0;
+  text-transform: uppercase;
+  width: 10rem;
+}
+
+.m-card--icon-star > i {
+  color: var(--color-grey-blue);
+  /* opacity: 0.25; */
+}
+
+.m-card--icon-arrow > i {
+  color: var(--color-black);
+  margin-left: 1rem;
+}
+
+.m-card--category,
+.m-card--votes {
+  color: var(--color-grey-blue);
+  background: var(--color-black);
+  padding: 0.25rem 0.75rem;
+  position: absolute;
+  text-transform: capitalize;
+  top: 42%;
+}
+
+.m-card--votes {
+  right: 0;
+}
+
+.m-card--votes {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.m-card--votes > i {
+  margin-left: 0.25rem;
+}
+
+.m-card--image {
+  height: 45%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.m-card--title,
+.m-card--short-title {
+  padding: 0 0.75rem;
+}
+
+.m-card--title {
+  margin-top: 2rem;
+  text-transform: uppercase;
+}

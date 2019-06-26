@@ -1,0 +1,72 @@
+.m-nav--check {
+  cursor: pointer;
+  display: block;
+  height: 24px;
+  opacity: 0;
+  position: absolute;
+  right: 1rem;
+  width: 30px;
+  z-index: 13;
+}
+
+.m-nav--line {
+  background: var(--color-black);
+  display: block;
+  height: 3px;
+  margin-bottom: 5px;
+  opacity: 1;
+  position: relative;
+  transform-origin: 4px 0px;
+  transition: transform 0.2s ease-in, opacity 0.2s ease-in,
+    background 0.5s ease-in;
+  width: 30px;
+  z-index: 12;
+}
+
+.m-nav--line:first-of-type {
+  transform-origin: 0% 0%;
+}
+
+.m-nav--line:nth-child(3) {
+  transform-origin: 0% 100%;
+}
+
+.m-nav--line:last-of-type {
+  margin-bottom: 0px;
+}
+
+.m-nav--menu {
+  align-items: center;
+  background: var(--color-black);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: -2.45rem 0 0 2.85rem;
+  padding: 10rem 4rem 4rem;
+  position: absolute;
+  transform-origin: 0% 0%;
+  transform: translate(0, 0);
+  transition: transform 0.2s ease-in;
+  width: 100%;
+  z-index: 11;
+}
+
+.m-menu--link {
+  width: 100%;
+}
+
+.m-menu--item {
+  align-items: center;
+  color: var(--color-grey-blue);
+  display: flex;
+  flex-direction: row;
+  font-family: var(--font-secondary);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 1.5rem 0;
+  text-transform: uppercase;
+}
+
+.m-menu--item > i {
+  margin-right: 2rem;
+}

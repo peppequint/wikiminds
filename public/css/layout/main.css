@@ -1,0 +1,21 @@
+.l-frozen {
+  overflow: hidden;
+}
+
+.m-section {
+  padding: 0.75rem 1rem;
+  width: 100%;
+}
+
+.m-section--heading {
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+.m-section--heading::before {
+  bottom: 0;
+  content: "";
+  height: 3px;
+  position: absolute;
+  width: 100%;
+}

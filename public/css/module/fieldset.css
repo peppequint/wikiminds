@@ -1,0 +1,48 @@
+.m-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.m-fieldset--label {
+  margin-bottom: 0.5rem;
+}
+
+.m-fieldset--text {
+  background: white;
+  border: 2px solid var(--color-grey-light);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+}
+
+.m-fieldset--button {
+  background: var(--color-black);
+  border: 2px solid var(--color-black);
+  color: var(--color-grey-blue);
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+}
+
+.m-fieldset--upload {
+  align-items: center;
+  border: 2px solid var(--color-grey-light);
+  cursor: pointer;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.m-fieldset--upload > i {
+  color: var(--color-grey-light);
+}
+
+.m-fieldset--label-radio {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  font-weight: 500;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+}
