@@ -39,7 +39,7 @@ There's a lot of concepting being done all over the world, but the majority of t
 
 Wikiminds is a platform where issues and innovative minds meet. This leads to the creation of new and out of the box ideas to better the world.
 
-When completed Wikiminds should be a multisided platform free for anyone to use. The goal is to create a application in which users think about issues (e.g. environmental issues) together and come up with creative solutions.
+When completed, Wikiminds should be a multisided platform free for anyone to use. The goal is to create an application in which users think about issues (e.g. environmental issues) together and come up with creative solutions.
 
 Without users actively contributing there wouldn't be any content on Wikiminds, which is why it is extremely important for users to want to use this platform.
 
