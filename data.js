@@ -33,7 +33,7 @@ function upload(req, res) {
         res.send(err)
       }
       res.render('message', {
-        message: issue.title + ' has been added',
+        message: '"' + issue.title + '" has been added',
         redirect: '/'
       })
     })
@@ -59,7 +59,7 @@ function comment(req, res) {
           res.send(err)
         }
         res.render('message', {
-          message: comment.title + ' has been added',
+          message: '"' + comment.title + '" has been added',
           redirect: '/details/' + req.params.id + '#comment'
         })
       })

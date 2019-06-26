@@ -95,7 +95,7 @@ app.get('/details/:id/like', (req, res) => {
     data.handler.addLike(req.params.id, req.session.userId).then(issue => {
       if (issue) {
         res.render('message', {
-          message: 'You favorited ' + issue.title,
+          message: 'You favorited "' + issue.title + '".',
           redirect: '/details/' + issue._id
         })
       } else {
@@ -120,7 +120,7 @@ app.get('/details/:id/dislike', (req, res) => {
     data.handler.removeLike(req.params.id, req.session.userId).then(issue => {
       if (issue) {
         res.render('message', {
-          message: 'You removed ' + issue.title + ' from your favorites',
+          message: 'You removed "' + issue.title + '" from your favorites',
           redirect: '/favorites'
         })
       } else {
@@ -186,7 +186,7 @@ app.get('/delete/:id', (req, res) => {
     data.handler.deleteIssue(req.params.id, req.session.userId).then(issue => {
       if (issue) {
         res.render('message', {
-          message: 'Issue with name ' + issue.title + ' has been deleted',
+          message: 'Issue with name "' + issue.title + '" has been deleted',
           redirect: '/'
         })
       } else {
@@ -292,10 +292,10 @@ io.on('connection', function(socket) {
   socket.on('upvote', function(upvote) {
     data.handler.upvoteComment(upvote.id, upvote.userId).then(comment => {
       if (comment) {
-        console.log(comment.title + ' upvoted')
+        console.log('"' + comment.title + '" upvoted.')
         socket.emit('upvote', { success: true, comment: comment._id })
       } else {
-        console.log('comment already upvoted')
+        console.log('Comment already upvoted.')
         socket.emit('upvote', { success: false, comment: upvote.id })
       }
     })

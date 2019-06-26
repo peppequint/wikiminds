@@ -20,9 +20,9 @@ function register(req, res) {
       if (name) {
         return res.render('message', {
           message:
-            'The username ' +
+            'The username "' +
             name.username +
-            ' is taken, please try another username',
+            '" is taken, please try another username',
           redirect: '/register'
         })
       } else {
@@ -60,9 +60,9 @@ function login(req, res) {
       if (!result) {
         return res.render('message', {
           message:
-            'The username ' +
+            'The username "' +
             username +
-            ' does not exist in our database, please try again',
+            '" does not exist in our database, please try again',
           redirect: '/login'
         })
       } else {

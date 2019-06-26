@@ -32,11 +32,12 @@
 							<h2>Full description</h2>	
 							<p class="m-information--paragraph"><%= issue.description%></p>
 							<% if(session.userId && issue.owner && issue.owner === session.userId){%>
-							<a href="/edit/<%=issue._id%>">Edit this issue</a>
+							<a href="#">Edit this issue</a>
 							<a href="/delete/<%=issue._id%>">Delete this issue</a>
 							<% } %>
 						</section>
 						<section class="m-information--detail m-comment--detail" id="comment">
+						<h1>Comment section</h1>
 						<% if(comments[0]){ %>
 							<% comments.forEach(comment => { %>
 							<article class="m-comment">
@@ -76,10 +77,11 @@
 							<% } %>
 						</section>
 						<section class='m-information--detail m-contribute--detail' id="contribute">
-							<h1>section3</h1>
-							<p class="m-information--paragraph"><%= issue.meta_description%></p>
+							<h1>Contribute</h1>
+							<p class="m-information--paragraph">Participate in "<%= issue.title%>".</p>
+							<p>This is a WIP, and not part of this first prototype.</p>
 							<% if(session.userId && issue.owner && issue.owner === session.userId){%>
-							<a href="/edit/<%=issue._id%>">Edit this issue</a>
+							<a href="#">Edit this issue</a>
 							<a href="/delete/<%=issue._id%>">Delete this issue</a>
 							<% } %>
 						</section>
