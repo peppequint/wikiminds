@@ -63,6 +63,7 @@ legend {
 }
 
 .wrapper {
+  height: 100%;
   overflow: hidden auto;
   position: relative;
 }
