@@ -155,3 +155,7 @@ When logged in you can press the profile icon in the top right corner to view yo
 When viewing an issue you can also click on the user displayed on the issue page. This will show you the profile of the user that posted the issue, and any other issues they may have posted.
 
 Here you can also see more details about that particular user.
+
+## Real time upvoting
+
+If a user has Javascript enabled (which most users do) the up and downvoting of comments will be done via sockets. This way the user gets instant feedback on their actions. Without Javascript enabled the application will fall back to a simpler approach to update the database, this will however refresh the page.
