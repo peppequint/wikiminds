@@ -9,13 +9,26 @@
 			<main class="l-container">
 				<section class="m-section m-trending">
 					<h1 class="m-section--heading m-section--heading-red m-heading--xxl">Trending</h1>
-					<% data.forEach(function(issue){ %>
+					
+					<% 
+					// sort by Twitter popularity
+					var byPopularity = data.slice(0);
+						byPopularity.sort(function(a,b) {
+    					return b.popularity - a.popularity;
+					});%>
+					<% byPopularity.forEach(function(issue){ %>
 						<%- include('../partials/card', {issue: issue}); %>
 					<% }); %>
 				</section>
 				<section class="m-section m-recommended">
 					<h1 class="m-section--heading m-section--heading-blue m-heading--xxl">Recommended</h1>
-					<% data.forEach(function(issue){ %>
+						<% 
+						// sort by amount of favorites
+						var byLikes = data.slice(0);
+						byLikes.sort(function(a,b) {
+    					return b.likes.length - a.likes.length;
+					});%>
+					<% byLikes.forEach(function(issue){ %>
 						<%- include('../partials/card', {issue: issue}); %>
 					<% }); %>
 				</section>

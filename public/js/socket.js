@@ -4,10 +4,12 @@ socket.on('test', function(data) {
   console.log(data)
 })
 
+// upvote button
 function upvote(id, userId) {
   socket.emit('upvote', { id: id, userId: userId })
 }
 
+// receiving on upvote socket
 socket.on('upvote', function(report) {
   console.log(report.success)
   commentScore = document.getElementById(report.comment)
@@ -18,10 +20,12 @@ socket.on('upvote', function(report) {
   }
 })
 
+// on downvote button
 function downvote(id, userId) {
   socket.emit('downvote', { id: id, userId: userId })
 }
 
+// when receiving a message on downvote socket
 socket.on('downvote', function(report) {
   console.log(report.success)
   commentScore = document.getElementById(report.comment)
@@ -32,6 +36,7 @@ socket.on('downvote', function(report) {
   }
 })
 
+// code for realtime messaging
 // $('form').submit(function(e) {
 //   e.preventDefault() // prevents page reloading
 //   var comment = {
