@@ -3,8 +3,14 @@
         <head>
             <% include ../partials/head %>
         </head>
-        <% include ../partials/header %>
-        <h2><%= message %></h2>
-        <a href="<%= redirect %>"><p>OK</p><a>
+        <div class="wrapper">
+            <% include ../partials/header %>
+            <main class="l-container">
+                <section class="m-section m-message">
+                    <h2><%= message %></h2>
+                    <a class="m-message--button" href="<%= redirect %>">Oke</a>
+                </section>
+            </main>
+        </div>
     </html>
 </html>
