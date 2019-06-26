@@ -95,12 +95,13 @@ app.get('/details/:id/like', (req, res) => {
     data.handler.addLike(req.params.id, req.session.userId).then(issue => {
       if (issue) {
         res.render('message', {
-          message: 'You liked ' + issue.title,
+          message: 'You favorited ' + issue.title,
           redirect: '/details/' + issue._id
         })
       } else {
         res.render('message', {
-          message: 'You already liked this post',
+          message:
+            'You already favorited this post. To remove this post from your favorites, navigate to favorites in the menu',
           redirect: '/'
         })
       }
@@ -108,6 +109,30 @@ app.get('/details/:id/like', (req, res) => {
   } else {
     res.render('message', {
       message: 'You need to be logged in to like an issue',
+      redirect: '/login'
+    })
+  }
+})
+
+// removing an issue from likes
+app.get('/details/:id/dislike', (req, res) => {
+  if (req.session.userId) {
+    data.handler.removeLike(req.params.id, req.session.userId).then(issue => {
+      if (issue) {
+        res.render('message', {
+          message: 'You removed ' + issue.title + ' from your favorites',
+          redirect: '/favorites'
+        })
+      } else {
+        res.render('message', {
+          message: 'Something went horribly wrong, please try again',
+          redirect: '/'
+        })
+      }
+    })
+  } else {
+    res.render('message', {
+      message: 'You need to be logged in to favorite or remove an issue',
       redirect: '/login'
     })
   }

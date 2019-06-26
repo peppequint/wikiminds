@@ -16,7 +16,7 @@
     					return b.likes.length - a.likes.length;
 					});%>
 					<% byLikes.forEach(function(issue){ %>
-						<%- include('../partials/card', {issue: issue}); %>
+						<%- include('../partials/favorite', {issue: issue}); %>
 					<% }); %>
 				</section>
 			</main>

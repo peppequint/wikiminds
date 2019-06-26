@@ -105,6 +105,13 @@ const handler = {
       { $push: { likes: userId } }
     )
   },
+  // remove issue from likes
+  removeLike: (issueId, userId) => {
+    return Issue.findOneAndUpdate(
+      { _id: issueId },
+      { $pull: { likes: userId } }
+    )
+  },
   // upvote a comment
   upvoteComment: (commentId, userId) => {
     return Comment.findOneAndUpdate(
