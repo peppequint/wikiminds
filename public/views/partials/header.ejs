@@ -7,12 +7,11 @@
 		<span class="m-nav--line"></span>
 		<span class="m-nav--line"></span>
 		<ul class="m-nav--menu">
-			<a href="#" class="m-menu--link"><li class="m-menu--item"><i class="material-icons">people</i>Participants</li></a>
-			<a href="#" class="m-menu--link"><li class="m-menu--item"><i class="material-icons">list</i>Categories</li></a>
-			<% if(session.userId){ %>
+					<% if(session.userId){ %>
 			<a href="/issue" class="m-menu--link"><li class="m-menu--item"><i class="material-icons">note_add</i>Create issue</li></a>
 			<a href="/favorites" class="m-menu--link"><li class="m-menu--item"><i class="material-icons">star</i>Favorites</li></a>
 			<% } %>
+			<a href="/profile" class="m-menu--link"><li class="m-menu--item"><i class="material-icons">people</i>Profile</li></a>
 		</ul>
 	</nav>
 </header>
