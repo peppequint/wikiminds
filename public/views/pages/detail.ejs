@@ -38,8 +38,13 @@
 						</section>
 						<section class="m-information--detail m-comment--detail" id="comment">
 						<h1>Comment section</h1>
-						<% if(comments[0]){ %>
-							<% comments.forEach(comment => { %>
+						<% if(comments[0]){
+							console.log(comments)
+							var byLikes = comments.slice(0);
+						byLikes.sort(function(a,b) {
+						return (b.likes.length - b.dislikes.length)  - (a.likes.length - a.dislikes.length);
+						})
+							 byLikes.forEach(comment => { %>
 							<article class="m-comment">
 								<span class="m-comment--title"><%= comment.title %></span>
 								<p class="m-comment--content"><%= comment.meta_description %></p>
