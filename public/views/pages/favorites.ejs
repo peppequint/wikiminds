@@ -15,9 +15,12 @@
 						byLikes.sort(function(a,b) {
     					return b.likes.length - a.likes.length;
 					});%>
+					<% if(byLikes.length > 0){%>
 					<% byLikes.forEach(function(issue){ %>
 						<%- include('../partials/favorite', {issue: issue}); %>
-					<% }); %>
+					<% })} else { %>
+					<p> You don't have any favorites yet. You can add favorites by clicking the star icon on an issue card. </p>
+					<% } %>
 				</section>
 			</main>
 			<% include ../partials/footer %>
