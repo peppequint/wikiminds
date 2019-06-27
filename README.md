@@ -165,6 +165,8 @@ When viewing the comments on an issue, the user can also leave a comment themsel
 
 This comment requires a title and a description, and when posted will also show which user made the comment.
 
+Comments are ordered by amount of likes, so the users decide which comment should be on top.
+
 ### Liking an issue
 
 Issues can be liked by pressing the star icon. The total amount of likes is also displayed on the issue page.
