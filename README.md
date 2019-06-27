@@ -9,6 +9,12 @@
 </p>
 <br>
 
+![screenshot](./screenshot_wikiminds.png)
+
+[Link to live demo](www.wikiminds.herokuapp.com)
+
+### Visit www.wikiminds.herokuapp.com on your phone to test the prototype!
+
 ## Table of contents
 
 - [Table of contents](#Table-of-contents)
@@ -36,7 +42,7 @@
 
 ## Install
 
-You have to need [Node.js](https://nodejs.org/en/download/) installed on your computer to run this project. To install this project on your computer, please follow the steps below from your command line:
+You need to have [Node.js](https://nodejs.org/en/download/) installed on your computer to run this project. To install this project on your computer, please follow the steps below on your command line:
 
 ```shell
 # Clone repository
@@ -70,6 +76,8 @@ People partaking in Wikiminds projects should be proud of their achievements on 
 - Submit issues
 - Submit possible solutions to issues
 - Vote on issues
+- Add issues to your favorites and view your favorites
+- Issues ordered by amount of likes and/or Twitter popularity
 - Vote on solutions
 - Bring solutions and issues together
 - View the progress of Wikiminds projects
@@ -205,7 +213,7 @@ If a user has Javascript enabled (which most users do) the up and downvoting of 
 
 Below are the things we would have liked to add when given more time.
 
-- Real time comments using sockets
+- Real time placing of comments using sockets, not just the up/downvoting
 - Editing profile and issues
 - Admin privileges for certain users
 - Deleting/changing your vote on comments
