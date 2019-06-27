@@ -8,9 +8,9 @@
 <!-- 	<a href="#">Live demo</a> -->
 </p>
 <br>
-<div align="center">
-![screenshot](./screenshot_wikiminds.png)
-</div>
+
+<div style="text-align:center"><img src="./screenshot_wikiminds.png" /></div>
+
 [Link to live demo](www.wikiminds.herokuapp.com)
 
 ### Visit www.wikiminds.herokuapp.com on your phone to test the prototype!
