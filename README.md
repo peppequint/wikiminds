@@ -217,3 +217,5 @@ Below are the things we would have liked to add when given more time.
 - Editing profile and issues
 - Admin privileges for certain users
 - Deleting/changing your vote on comments
+- Application is now mobile first -> desktop version
+- Incorporating a news API in conjunction with the Twitter API we use now for a better popularity check
