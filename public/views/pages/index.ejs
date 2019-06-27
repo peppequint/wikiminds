@@ -7,8 +7,20 @@
 		<div class="wrapper">
 			<% include ../partials/header %>
 			<main class="l-container">
-				<section class="m-section m-trending">
-					<h1 class="m-section--heading m-section--heading-red m-heading--xxl">Trending</h1>
+				<section class="m-section m-recommended">
+					<h1 class="m-section--heading m-section--heading-blue m-heading--xxl">Most liked</h1>
+						<% 
+						// sort by amount of favorites
+						var byLikes = data.slice(0);
+						byLikes.sort(function(a,b) {
+    					return b.likes.length - a.likes.length;
+					});%>
+					<% byLikes.forEach(function(issue){ %>
+						<%- include('../partials/card', {issue: issue}); %>
+					<% }); %>
+				</section>
+								<section class="m-section m-trending">
+					<h1 class="m-section--heading m-section--heading-red m-heading--xxl">Trending on Twitter</h1>
 					
 					<% 
 					// sort by Twitter popularity
@@ -17,18 +29,6 @@
     					return b.popularity - a.popularity;
 					});%>
 					<% byPopularity.forEach(function(issue){ %>
-						<%- include('../partials/card', {issue: issue}); %>
-					<% }); %>
-				</section>
-				<section class="m-section m-recommended">
-					<h1 class="m-section--heading m-section--heading-blue m-heading--xxl">Recommended</h1>
-						<% 
-						// sort by amount of favorites
-						var byLikes = data.slice(0);
-						byLikes.sort(function(a,b) {
-    					return b.likes.length - a.likes.length;
-					});%>
-					<% byLikes.forEach(function(issue){ %>
 						<%- include('../partials/card', {issue: issue}); %>
 					<% }); %>
 				</section>
