@@ -9,7 +9,7 @@
 </p>
 <br>
 
-<div style="text-align:center"><img src="./screenshot_wikiminds.png" /></div>
+<div align="center"><img src="./screenshot_wikiminds.png" /></div>
 
 [Link to live demo](www.wikiminds.herokuapp.com)
 
